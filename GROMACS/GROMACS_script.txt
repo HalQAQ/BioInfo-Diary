@@ -1,0 +1,508 @@
+### 1. PTPN11 + EPIYpA-D
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D.pdb -o SHP2_SH2_CagA_EPIYA_D_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_processed.gro -o SHP2_SH2_CagA_EPIYA_D_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_2.tpr
+gmx_mpi mdrun -deffnm md_0_2 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_2.tpr -f md_0_2.xtc -o md_0_2_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_2.tpr -f md_0_2_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_2_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_2.tpr -f md_0_2_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 2. PTPN11-N-SH2 + EPIYpA-D:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_Nter.pdb -o SHP2_SH2_CagA_EPIYA_D_Nter_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_Nter_processed.gro -o SHP2_SH2_CagA_EPIYA_D_Nter_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_Nter_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_Nter_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_Nter_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_Nter_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_Nter_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_2.tpr
+gmx_mpi mdrun -deffnm md_0_2 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_2.tpr -f md_0_2.xtc -o md_0_2_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_2.tpr -f md_0_2_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_2_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_2.tpr -f md_0_2_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 3. PTPN11-C-SH2 + EPIYpA-D:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_Cter.pdb -o SHP2_SH2_CagA_EPIYA_D_Cter_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_Cter_processed.gro -o SHP2_SH2_CagA_EPIYA_D_Cter_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_Cter_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_Cter_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_Cter_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_Cter_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_Cter_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_1.tpr
+gmx_mpi mdrun -deffnm md_0_1 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_1.tpr -f md_0_1.xtc -o md_0_1_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_1.tpr -f md_0_1_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_1_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_1.tpr -f md_0_1_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 4. PTPN11-N-SH2 + EPIYpA-C:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_C_Nter.pdb -o SHP2_SH2_CagA_EPIYA_C_Nter_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_C_Nter_processed.gro -o SHP2_SH2_CagA_EPIYA_C_Nter_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_C_Nter_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_C_Nter_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_C_Nter_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_C_Nter_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_C_Nter_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_10.tpr
+gmx_mpi mdrun -deffnm md_10 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_10.tpr -f md_10.xtc -o md_10_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_10.tpr -f md_10_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_10_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_10.tpr -f md_10_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 5. PTPN11-C-SH2 + EPIYpA-C:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_C_Cter.pdb -o SHP2_SH2_CagA_EPIYA_C_Cter_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_C_Cter_processed.gro -o SHP2_SH2_CagA_EPIYA_C_Cter_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_C_Cter_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_C_Cter_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_C_Cter_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_C_Cter_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_C_Cter_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_10.tpr
+gmx_mpi mdrun -deffnm md_10 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_10.tpr -f md_10.xtc -o md_10_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_10.tpr -f md_10_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_10_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_10.tpr -f md_10_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 6. PTPN11-N-SH2 + EPIYpA-D_unphosphorylated:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_Nter_unphos.pdb -o SHP2_SH2_CagA_EPIYA_D_Nter_unphos_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_Nter_unphos_processed.gro -o SHP2_SH2_CagA_EPIYA_D_Nter_unphos_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_Nter_unphos_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_Nter_unphos_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_Nter_unphos_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_Nter_unphos_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_Nter_unphos_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 7. PTPN11-C-SH2 + EPIYpA-D_unphosphorylated:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_Cter_unphos.pdb -o SHP2_SH2_CagA_EPIYA_D_Cter_unphos_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_Cter_unphos_processed.gro -o SHP2_SH2_CagA_EPIYA_D_Cter_unphos_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_Cter_unphos_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_Cter_unphos_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_Cter_unphos_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_Cter_unphos_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_Cter_unphos_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 8. PTPN11-N-SH2 + EPIYpA-C_unphosphorylated:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_C_Nter_unphos.pdb -o SHP2_SH2_CagA_EPIYA_C_Nter_unphos_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_C_Nter_unphos_processed.gro -o SHP2_SH2_CagA_EPIYA_C_Nter_unphos_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_C_Nter_unphos_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_C_Nter_unphos_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_C_Nter_unphos_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_C_Nter_unphos_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_C_Nter_unphos_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+### 9. PTPN11-C-SH2 + EPIYpA-C_unphosphorylated:
+# Generate topology file, position restraint file and the post-processed structure file
+gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_C_Cter_unphos.pdb -o SHP2_SH2_CagA_EPIYA_C_Cter_unphos_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+# Define the box
+gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_C_Cter_unphos_processed.gro -o SHP2_SH2_CagA_EPIYA_C_Cter_unphos_newbox.gro -c -d 1.0 -bt cubic
+
+# Fill it with solvent (water)
+gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_C_Cter_unphos_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_C_Cter_unphos_solv.gro -p topol.top
+
+# Adding ions (Cl-1)
+gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_C_Cter_unphos_solv.gro -p topol.top -o ions.tpr
+
+# genion
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_C_Cter_unphos_solv_ions.gro -p topol.top -pname NA -nname CL -neutral  # SOL
+
+# Energy minimization
+gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_C_Cter_unphos_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+# Energy potential should be in the range  -10e5:-10e6
+
+# See potential convergence
+gmx_mpi energy -f em.edr -o potential.xvg
+
+#  NVT Equilibration
+gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx_mpi mdrun -deffnm nvt -ntomp 16 -nb gpu
+gmx_mpi energy -f nvt.edr -o temperature.xvg
+
+# NPT Equilibration
+gmx_mpi grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx_mpi mdrun -deffnm npt -ntomp 16 -nb gpu
+gmx_mpi energy -f npt.edr -o pressure.xvg
+gmx_mpi energy -f npt.edr -o density.xvg
+
+# Molecular Dynamics
+gmx_mpi grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_4.tpr
+gmx_mpi mdrun -deffnm md_0_4 -ntomp 16 -nb gpu
+
+# Analysis
+gmx_mpi trjconv -s md_0_4.tpr -f md_0_4.xtc -o md_0_4_noPBC.xtc -pbc mol -center  # 'Protein' to be centered, 'System' for output
+gmx_mpi rms -s md_0_4.tpr -f md_0_4_noPBC.xtc -o rmsd.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi rms -s em.tpr -f md_0_4_noPBC.xtc -o rmsd_xtal.xvg -tu ns  # 'Backbone' for both the least-squares fit and the group for RMSD calculation
+gmx_mpi gyrate -s md_0_4.tpr -f md_0_4_noPBC.xtc -o gyrate.xvg  # 'Protein' for gyrate radius calculation
+
+
+
+
+
+# Energy analysis
+gmx energy -f em.edr -o potential.xvg # 10 0
+
+# Equilibration with solvent
+# Applying a position restraining force
+gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+
+# 100-ps NVT equilibration
+##gmx mdrun -deffnm nvt # 15 min
+
+# Analysis of the temperature progression, using energy
+gmx energy -f nvt.edr -o temperature.xvg # 16 0
+
+# Equilibration of pressure
+gmx grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+# 100-ps NPT equilibration
+##gmx mdrun -deffnm npt # 14 min
+
+# Analysis of pressure progression, using energy
+gmx energy -f npt.edr -o pressure.xvg # 18 0
+
+# Analysis of density progression, using energy
+gmx energy -f npt.edr -o density.xvg # 24 0
+
+# Release the position restraints and run production MD
+gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_1.tpr
+##gmx mdrun -deffnm md_0_1 # 147 min
+
+# To account for any periodicity in the system
+gmx trjconv -s md_0_1.tpr -f md_0_1.xtc -o md_0_1_noPBC.xtc -pbc mol -center # 1 0
+
+# Structural stability analysis. Relative to the structure present in the minimized, equilibrated system.
+gmx rms -s md_0_1.tpr -f md_0_1_noPBC.xtc -o rmsd.xvg -tu ns # 4 0
+
+# Structural stability analysis. Relative to the crystal structure.
+gmx rms -s em.tpr -f md_0_1_noPBC.xtc -o rmsd_xtal.xvg -tu ns # 4 0
+
+# The radius of gyration of a protein is a measure of its compactness. If a protein is stably folded, it will likely maintain a relatively steady value of Rg. If a protein unfolds, its Rg will change over time
+gmx gyrate -s md_0_1.tpr -f md_0_1_noPBC.xtc -o gyrate.xvg # 1
+
+##gmx editconf -f md_0_1.gro -o md_0_1_converted.pdb
+##gmx trjconv -s md_0_1.tpr -f md_0_1.xtc -o md_0_1.pdb -pbc whole -conect # 1
+

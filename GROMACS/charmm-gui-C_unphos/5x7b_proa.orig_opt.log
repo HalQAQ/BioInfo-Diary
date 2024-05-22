@@ -1,0 +1,41 @@
+Check global input consistency...
+Done.
+- Finished with read_parameters.
+  Reading topology file: /home/charmm-gui/local/GalaxyFill/data/topology_charmm22ph.in
+  Reading topology file: /home/charmm-gui/local/GalaxyFill/data/topology_charmm22ph_nt.in
+  Reading topology file: /home/charmm-gui/local/GalaxyFill/data/topology_charmm22ph_ct.in
+- Finished with read_topology_geo.
+  Reading topology file: /home/charmm-gui/local/GalaxyFill/data/topology_eng_charmm22ph.in
+  Num_ref_res =    77
+- Finished with read_topology_eng.
+- Rotamer setup
+  Reading rotamer library file  /home/charmm-gui/local/GalaxyFill/data/bbdep02.May.sortlib
+  Total number of rotamers in rot lib file      466829
+  Reading infile_chi_def file  /home/charmm-gui/local/GalaxyFill/data/def_chi.in
+  Random seed =   11331038
+Task: local_optimize
+ - local_optimize_relax: no
+ - local_optimize_sidechain: no
+============================================================
+  Reading sequence from pdb file: 5x7b_proa.orig_init.pdb
+  Reading pdb file: 5x7b_proa.orig_init.pdb
+- Add missing atoms activated.
+  Number of added heavy atoms =     0
+  Total number of added atoms =     0
+  n_unplaced =     0
+- Fix type "all" activated: All atoms except ULR/USC are fixed.
+- Energy: MM energy activated.
+- Add missing atoms activated.
+  Number of added heavy atoms =     0
+  Total number of added atoms =     0
+  n_unplaced =     0
+Before optimization, 5x7b_proa.orig_init.pdb ENERGY.0       6012.785
+Before optimization, 5x7b_proa.orig_init.pdb ENERGY.1       6012.785        0.000        0.000
+Before optimization, 5x7b_proa.orig_init.pdb ENERGY.2.0     30.960    358.034    390.951    184.699   5048.140      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000
+After  optimization, 5x7b_proa.orig_init.pdb ENERGY.0         30.216
+After  optimization, 5x7b_proa.orig_init.pdb ENERGY.1         30.216        0.000        0.000
+After  optimization, 5x7b_proa.orig_init.pdb ENERGY.2.0      3.330     34.030     32.131      8.776    -48.051      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000      0.000
+------------------------------------------------------------
+Total User Time =      8.391 sec
+           0 dy  0 hr  0 min  8.391 sec
+------------------------------------------------------------

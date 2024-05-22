@@ -1,0 +1,39 @@
+# This file was created Thu May  9 17:29:43 2024
+# Created by:
+#                       :-) GROMACS - gmx rms, 2024.1 (-:
+# 
+# Executable:   /usr/local/bin/gmx_mpi
+# Data prefix:  /usr/local
+# Working dir:  /home/guest3/5x94
+# Command line:
+#   gmx_mpi rms -s em.tpr -f md_0_1_noPBC.xtc -o rmsd_xtal.xvg -tu ns
+# gmx rms is part of G R O M A C S:
+#
+# Gallium Rubidium Oxygen Manganese Argon Carbon Silicon
+#
+@    title "RMSD"
+@    xaxis  label "Time (ns)"
+@    yaxis  label "RMSD (nm)"
+@TYPE xy
+@ subtitle "Backbone after lsq fit to Backbone"
+   0.0000000    0.3418652
+   0.0100000    0.6722623
+   0.0200000    0.7007528
+   0.0300000    0.7049218
+   0.0400000    0.7214851
+   0.0500000    0.7461169
+   0.0600000    0.7512878
+   0.0700000    0.7731304
+   0.0800000    0.7825264
+   0.0900000    0.8088977
+   0.1000000    0.8340944
+   0.1100000    0.8309621
+   0.1200000    0.8198951
+   0.1300000    0.8413685
+   0.1400000    0.8582357
+   0.1500000    0.8549740
+   0.1600000    0.8692535
+   0.1700000    0.8723772
+   0.1800000    0.8834271
+   0.1900000    0.8698421
+   0.2000000    0.8925474

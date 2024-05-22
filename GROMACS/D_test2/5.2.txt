@@ -1,0 +1,3529 @@
+Xshell 7 (Build 0157)
+Copyright (c) 2020 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[C:\~]$ 
+
+Connecting to 10.109.92.125:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-28-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+10 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+3 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+20 updates could not be installed automatically. For more details,
+see /var/log/unattended-upgrades/unattended-upgrades.log
+guest1@capybara:~$ cd wbx
+guest1@capybara:~/wbx$ gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -339809410
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'NA'
+
+turning H bonds into constraints...
+
+Setting gen_seed to 2145386443
+
+Velocities were taken from a Maxwell distribution at 300 K
+Analysing residue names:
+There are:   449    Protein residues
+There are: 76289      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group Protein is 17822.89
+Number of degrees of freedom in T-Coupling group non-Protein is 457764.12
+
+The largest distance between excluded atoms is 1.141 nm between atom 6517 and 6543
+
+ERROR 1 [file nvt.mdp]:
+  The largest distance between excluded atoms is 1.141 nm between atom 6517
+  and 6543, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies.
+
+
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 300 K
+
+Calculated rlist for 1x1 atom pair-list as 1.036 nm, buffer size 0.036 nm
+
+Set rlist, assuming 4x4 atom pair-list, to 1.000 nm, buffer size 0.000 nm
+
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+
+NOTE 1 [file nvt.mdp]:
+  Removing center of mass motion in the presence of position restraints
+  might cause artifacts. When you are using position restraints to
+  equilibrate a macro-molecule, the artifacts are usually negligible.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 84x84x84, spacing 0.159 0.159 0.159
+
+Estimate for the relative computational load of the PME mesh part: 0.29
+
+This run will generate roughly 564 Mb of data
+
+There was 1 NOTE
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+There was 1 error in input file(s)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr -maxwarn 5
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr -maxwarn 5
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -210763913
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+turning H bonds into constraints...
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+turning H bonds into constraints...
+
+Excluding 3 bonded neighbours molecule type 'NA'
+
+turning H bonds into constraints...
+
+Setting gen_seed to -1141899268
+
+Velocities were taken from a Maxwell distribution at 300 K
+Analysing residue names:
+There are:   449    Protein residues
+There are: 76289      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group Protein is 17822.89
+Number of degrees of freedom in T-Coupling group non-Protein is 457764.12
+
+The largest distance between excluded atoms is 1.141 nm between atom 6517 and 6543
+
+ERROR 1 [file nvt.mdp]:
+  The largest distance between excluded atoms is 1.141 nm between atom 6517
+  and 6543, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies.
+
+
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 300 K
+
+Calculated rlist for 1x1 atom pair-list as 1.036 nm, buffer size 0.036 nm
+
+Set rlist, assuming 4x4 atom pair-list, to 1.000 nm, buffer size 0.000 nm
+
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+
+NOTE 1 [file nvt.mdp]:
+  Removing center of mass motion in the presence of position restraints
+  might cause artifacts. When you are using position restraints to
+  equilibrate a macro-molecule, the artifacts are usually negligible.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 84x84x84, spacing 0.159 0.159 0.159
+
+Estimate for the relative computational load of the PME mesh part: 0.29
+
+This run will generate roughly 564 Mb of data
+
+There was 1 NOTE
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+There was 1 error in input file(s)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx pdb2gmx, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+
+Using the Charmm36-jul2022 force field in directory ./charmm36-jul2022.ff
+
+going to rename ./charmm36-jul2022.ff/aminoacids.r2b
+Opening force field file ./charmm36-jul2022.ff/aminoacids.r2b
+
+going to rename ./charmm36-jul2022.ff/carb.r2b
+Opening force field file ./charmm36-jul2022.ff/carb.r2b
+
+going to rename ./charmm36-jul2022.ff/cgenff.r2b
+Opening force field file ./charmm36-jul2022.ff/cgenff.r2b
+
+going to rename ./charmm36-jul2022.ff/ethers.r2b
+Opening force field file ./charmm36-jul2022.ff/ethers.r2b
+
+going to rename ./charmm36-jul2022.ff/lipid.r2b
+Opening force field file ./charmm36-jul2022.ff/lipid.r2b
+
+going to rename ./charmm36-jul2022.ff/metals.r2b
+Opening force field file ./charmm36-jul2022.ff/metals.r2b
+
+going to rename ./charmm36-jul2022.ff/na.r2b
+Opening force field file ./charmm36-jul2022.ff/na.r2b
+
+going to rename ./charmm36-jul2022.ff/silicates.r2b
+Opening force field file ./charmm36-jul2022.ff/silicates.r2b
+
+going to rename ./charmm36-jul2022.ff/solvent.r2b
+Opening force field file ./charmm36-jul2022.ff/solvent.r2b
+Reading SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb...
+Read '', 3608 atoms
+
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+
+There are 1 chains and 0 blocks of water and 449 residues with 3608 atoms
+
+  chain  #res #atoms
+
+  1 'P'   449   3608  
+
+All occupancies are one
+
+All occupancies are one
+Opening force field file ./charmm36-jul2022.ff/atomtypes.atp
+
+Reading residue database... (Charmm36-jul2022)
+Opening force field file ./charmm36-jul2022.ff/aminoacids.rtp
+Opening force field file ./charmm36-jul2022.ff/carb.rtp
+Opening force field file ./charmm36-jul2022.ff/cgenff.rtp
+Opening force field file ./charmm36-jul2022.ff/ethers.rtp
+Opening force field file ./charmm36-jul2022.ff/lipid.rtp
+Opening force field file ./charmm36-jul2022.ff/metals.rtp
+Opening force field file ./charmm36-jul2022.ff/na.rtp
+Opening force field file ./charmm36-jul2022.ff/silicates.rtp
+Opening force field file ./charmm36-jul2022.ff/solvent.rtp
+Opening force field file ./charmm36-jul2022.ff/aminoacids.hdb
+Opening force field file ./charmm36-jul2022.ff/carb.hdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.hdb
+Opening force field file ./charmm36-jul2022.ff/ethers.hdb
+Opening force field file ./charmm36-jul2022.ff/lipid.hdb
+Opening force field file ./charmm36-jul2022.ff/metals.hdb
+Opening force field file ./charmm36-jul2022.ff/na.hdb
+Opening force field file ./charmm36-jul2022.ff/silicates.hdb
+Opening force field file ./charmm36-jul2022.ff/solvent.hdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.n.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.n.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.n.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.n.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.n.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.n.tdb
+Opening force field file ./charmm36-jul2022.ff/na.n.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.n.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.n.tdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.c.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.c.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.c.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.c.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.c.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.c.tdb
+Opening force field file ./charmm36-jul2022.ff/na.c.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.c.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.c.tdb
+
+Processing chain 1 'P' (3608 atoms, 449 residues)
+
+Identified residue ARG4 as a starting terminus.
+
+Identified residue ASP962 as a ending terminus.
+9 out of 9 lines of specbond.dat converted successfully
+Special Atom Distance matrix:
+                   MET82  CYS104  MET171  CYS174  MET202   MET82  CYS104
+                   SD629   SG809  SD1254  SG1280  SD1508  SD2276  SG2456
+  CYS104   SG809   1.557
+  MET171  SD1254   3.702   2.234
+  CYS174  SG1280   2.618   1.300   1.144
+  MET202  SD1508   4.027   2.732   1.249   1.625
+   MET82  SD2276   2.527   2.779   4.701   3.979   4.980
+  CYS104  SG2456   2.641   3.638   5.812   4.894   6.071   1.596
+  MET171  SD2897   4.425   5.656   7.877   6.918   8.215   3.725   2.239
+  CYS174  SG2923   3.787   4.829   7.007   6.115   7.358   2.661   1.342
+  MET202  SD3151   5.299   6.405   8.581   7.673   8.842   4.082   2.785
+                  MET171  CYS174
+                  SD2897  SG2923
+  CYS174  SG2923   1.125
+  MET202  SD3151   1.243   1.643
+Start terminus ARG-4: NH3+
+End terminus ASP-962: COO-
+Opening force field file ./charmm36-jul2022.ff/aminoacids.arn
+
+Checking for duplicate atoms....
+
+Now there are 3601 atoms. Deleted 5 duplicates.
+
+Generating any missing hydrogen atoms and/or adding termini.
+
+Now there are 449 residues with 7110 atoms
+
+Making bonds...
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Number of bonds was 7196, now 7196
+
+Generating angles, dihedrals and pairs...
+Before cleaning: 18842 pairs
+Before cleaning: 19057 dihedrals
+
+Making cmap torsions...
+
+There are  447 cmap torsion pairs
+
+There are 19057 dihedrals, 1274 impropers, 12981 angles
+          18710 pairs,     7196 bonds and     0 virtual sites
+
+Total mass 51100.484 a.m.u.
+
+Total charge -11.000 e
+
+Writing topology
+
+Writing coordinate file...
+
+		--------- PLEASE NOTE ------------
+
+You have successfully generated a topology from: SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb.
+
+The Charmm36-jul2022 force field and the spce water model are used.
+
+		--------- ETON ESAELP ------------
+
+GROMACS reminds you: "Catholic School Girls Rule" (Red Hot Chili Peppers)
+
+guest1@capybara:~/wbx$ gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 1.5 -bt cubic
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx editconf, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 1.5 -bt cubic
+
+Note that major changes are planned in future for editconf, to improve usability and utility.
+Read 7110 atoms
+Volume: 546.393 nm^3, corresponds to roughly 245800 electrons
+No velocities found
+    system size :  6.172  8.590 10.307 (nm)
+    diameter    : 11.358               (nm)
+    center      : -1.843  0.190  9.028 (nm)
+    box vectors :  6.172  8.589 10.307 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  : 546.39               (nm^3)
+    shift       :  9.022  6.989 -1.849 (nm)
+new center      :  7.179  7.179  7.179 (nm)
+new box vectors : 14.358 14.358 14.358 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  :2959.95               (nm^3)
+
+GROMACS reminds you: "Wild Pointers Couldn't Drag Me Away" (K.A. Feenstra)
+
+guest1@capybara:~/wbx$ gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx solvate, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+
+Reading solute configuration
+Reading solvent configuration
+
+Initialising inter-atomic distances...
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary. Note, that this functionality may
+         be removed in a future GROMACS version. Please, consider
+         using another file format for your input.
+
+NOTE: From version 5.0 gmx solvate uses the Van der Waals radii
+from the source below. This means the results may be different
+compared to previous GROMACS versions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+A. Bondi
+van der Waals Volumes and Radii
+J. Phys. Chem. 68 (1964) pp. 441-451
+-------- -------- --- Thank You --- -------- --------
+
+Generating solvent configuration
+Will generate new solvent configuration of 8x8x8 boxes
+Solvent box contains 316464 atoms in 105488 residues
+Removed 26397 solvent atoms due to solvent-solvent overlap
+Removed 6669 solvent atoms due to solute-solvent overlap
+Sorting configuration
+Found 1 molecule type:
+    SOL (   3 atoms): 94466 residues
+Generated solvent containing 283398 atoms in 94466 residues
+Writing generated configuration to SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro
+
+Output configuration contains 290508 atoms in 94915 residues
+Volume                 :     2959.95 (nm^3)
+Density                :     985.388 (g/l)
+Number of solvent molecules:  94466   
+
+Processing topology
+Adding line for 94466 solvent molecules with resname (SOL) to topology file (topol.top)
+
+Back Off! I just backed up topol.top to ./#topol.top.1#
+
+GROMACS reminds you: "Time is the best appraiser of scientific work, and I am aware that an industrial discovery rarely produces all its fruit in the hands of its first inventor." (Louis Pasteur)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file ions.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -1074798865
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 2 [file topol.top, line 67297]:
+  System has non-zero total charge: -11.000000
+  Total charge should normally be an integer. See
+  https://manual.gromacs.org/current/user-guide/floating-point.html
+  for discussion on how close it should be to an integer.
+
+
+
+Analysing residue names:
+There are:   449    Protein residues
+There are: 94466      Water residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 588123.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 3 [file ions.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+This run will generate roughly 22 Mb of data
+
+There were 3 NOTEs
+
+GROMACS reminds you: "Don't Push Me, Cause I'm Close to the Edge" (Tricky)
+
+guest1@capybara:~/wbx$ gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx genion, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Will try to add 11 NA ions and 0 CL ions.
+Select a continuous group of solvent molecules
+Group     0 (         System) has 290508 elements
+Group     1 (        Protein) has  7110 elements
+Group     2 (      Protein-H) has  3603 elements
+Group     3 (        C-alpha) has   449 elements
+Group     4 (       Backbone) has  1347 elements
+Group     5 (      MainChain) has  1795 elements
+Group     6 (   MainChain+Cb) has  2205 elements
+Group     7 (    MainChain+H) has  2227 elements
+Group     8 (      SideChain) has  4883 elements
+Group     9 (    SideChain-H) has  1808 elements
+Group    10 (    Prot-Masses) has  7110 elements
+Group    11 (    non-Protein) has 283398 elements
+Group    12 (          Water) has 283398 elements
+Group    13 (            SOL) has 283398 elements
+Group    14 (      non-Water) has  7110 elements
+Select a group: 13
+Selected 13: 'SOL'
+Number of (3-atomic) solvent molecules: 94466
+
+Processing topology
+Replacing 11 solute molecules in topology file (topol.top)  by 11 NA and 0 CL ions.
+
+Back Off! I just backed up topol.top to ./#topol.top.2#
+Using random seed 832304125.
+Replacing solvent molecule 47211 (atom 148743) with NA
+Replacing solvent molecule 66532 (atom 206706) with NA
+Replacing solvent molecule 55747 (atom 174351) with NA
+Replacing solvent molecule 85491 (atom 263583) with NA
+Replacing solvent molecule 4163 (atom 19599) with NA
+Replacing solvent molecule 56210 (atom 175740) with NA
+Replacing solvent molecule 8455 (atom 32475) with NA
+Replacing solvent molecule 63767 (atom 198411) with NA
+Replacing solvent molecule 11344 (atom 41142) with NA
+Replacing solvent molecule 3108 (atom 16434) with NA
+Replacing solvent molecule 70672 (atom 219126) with NA
+
+
+
+GROMACS reminds you: "I ought to warn you, I have no faith" (Jane Eyre in Jane Eyre by Charlotte Bronte)
+
+guest1@capybara:~/wbx$ 
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -f
+    File 'minim.mdp' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file minim.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -1401579535
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+Excluding 3 bonded neighbours molecule type 'NA'
+Analysing residue names:
+There are:   449    Protein residues
+There are: 94455      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 588090.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 8.361 nm between atom 6986 and 6998
+
+WARNING 1 [file minim.mdp]:
+  The largest distance between excluded atoms is 8.361 nm between atom 6986
+  and 6998, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 120x120x120, spacing 0.120 0.120 0.120
+
+Estimate for the relative computational load of the PME mesh part: 0.33
+
+This run will generate roughly 22 Mb of data
+
+There was 1 NOTE
+
+There was 1 WARNING
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+Too many warnings (1).
+If you are sure all warnings are harmless, use the -maxwarn option.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file minim.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -17834523
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+Excluding 3 bonded neighbours molecule type 'NA'
+Analysing residue names:
+There are:   449    Protein residues
+There are: 94455      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 588090.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 8.361 nm between atom 6986 and 6998
+
+WARNING 1 [file minim.mdp]:
+  The largest distance between excluded atoms is 8.361 nm between atom 6986
+  and 6998, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 120x120x120, spacing 0.120 0.120 0.120
+
+Estimate for the relative computational load of the PME mesh part: 0.33
+
+This run will generate roughly 22 Mb of data
+
+There was 1 NOTE
+
+There was 1 WARNING
+
+GROMACS reminds you: "It'll Cure Your Asthma Too !" (F. Zappa)
+
+guest1@capybara:~/wbx$ gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+
+Reading file em.tpr, VERSION 2024.1 (single precision)
+1 GPU selected for this run.
+Mapping of GPU IDs to the 1 GPU task in the 1 rank on this node:
+  PP:0
+PP tasks will do (non-perturbed) short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+Using 1 MPI process
+Using 16 OpenMP threads 
+
+
+NOTE: The number of threads is not equal to the number of (logical) cpus
+      and the -pin option is set to auto: will not pin threads to cpus.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+03
+   Number of steps    =        50000
+
+WARNING: Listed nonbonded interaction between particles 3243 and 3257
+at distance 3.240 which is larger than the table limit 2.000 nm.
+
+This is likely either a 1,4 interaction, or a listed interaction inside
+a smaller molecule you are decoupling during a free energy calculation.
+Since interactions at distances beyond the table cannot be computed,
+they are skipped until they are inside the table limit again. You will
+only see this message once, even if it occurs for several interactions.
+
+IMPORTANT: This should not happen in a stable simulation, so there is
+probably something wrong with your system. Only change the table-extension
+distance in the mdp file if you are really sure that is the reason.
+
+
+Step=    0, Dmax= 1.0e-02 nm, Epot=  6.43357e+07 Fmax= 8.79102e+09, atom= 6720
+Step=    1, Dmax= 1.0e-02 nm, Epot=  2.06282e+07 Fmax= 2.32605e+08, atom= 6720
+Step=    2, Dmax= 1.2e-02 nm, Epot=  1.91076e+07 Fmax= 9.70433e+06, atom= 6720
+Step=    3, Dmax= 1.4e-02 nm, Epot=  1.89437e+07 Fmax= 2.48224e+06, atom= 6998
+Step=    4, Dmax= 1.7e-02 nm, Epot=  1.86668e+07 Fmax= 2.46665e+06, atom= 6998
+Step=    5, Dmax= 2.1e-02 nm, Epot=  1.83857e+07 Fmax= 2.45080e+06, atom= 6998
+Step=    6, Dmax= 2.5e-02 nm, Epot=  1.80681e+07 Fmax= 2.43259e+06, atom= 6998
+Step=    7, Dmax= 3.0e-02 nm, Epot=  1.77066e+07 Fmax= 2.40437e+06, atom= 6998
+Step=    8, Dmax= 3.6e-02 nm, Epot=  1.72944e+07 Fmax= 2.36490e+06, atom= 6998
+Step=    9, Dmax= 4.3e-02 nm, Epot=  1.68261e+07 Fmax= 2.28136e+06, atom= 6996
+Step=   10, Dmax= 5.2e-02 nm, Epot=  1.63076e+07 Fmax= 2.10049e+06, atom= 6996
+Step=   11, Dmax= 6.2e-02 nm, Epot=  1.57935e+07 Fmax= 4.15678e+06, atom= 6996
+Step=   12, Dmax= 7.4e-02 nm, Epot=  1.55368e+07 Fmax= 2.16705e+06, atom= 6996
+Step=   13, Dmax= 8.9e-02 nm, Epot=  1.47777e+07 Fmax= 2.21711e+06, atom= 6998
+Step=   14, Dmax= 1.1e-01 nm, Epot=  1.47707e+07 Fmax= 8.08724e+07, atom= 6998
+Step=   15, Dmax= 1.3e-01 nm, Epot=  1.40932e+07 Fmax= 3.75532e+06, atom= 6998
+Step=   16, Dmax= 1.5e-01 nm, Epot=  1.33480e+07 Fmax= 4.23652e+06, atom= 6998
+Step=   17, Dmax= 1.8e-01 nm, Epot=  1.31911e+07 Fmax= 3.62784e+07, atom= 6996
+
+step 18: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   18, Dmax= 2.2e-01 nm, Epot=          inf Fmax= 4.23652e+06, atom= 6998
+step 19: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   20, Dmax= 5.5e-02 nm, Epot=  1.28610e+07 Fmax= 1.80627e+06, atom= 6996
+Step=   21, Dmax= 6.7e-02 nm, Epot=  1.24730e+07 Fmax= 1.81185e+06, atom= 6998
+Step=   22, Dmax= 8.0e-02 nm, Epot=  1.19926e+07 Fmax= 2.15384e+06, atom= 6725
+Step=   23, Dmax= 9.6e-02 nm, Epot=  1.16156e+07 Fmax= 1.63501e+06, atom= 6996
+Step=   25, Dmax= 5.8e-02 nm, Epot=  1.12569e+07 Fmax= 1.53080e+06, atom= 6996
+Step=   26, Dmax= 6.9e-02 nm, Epot=  1.08883e+07 Fmax= 1.51309e+06, atom= 6998
+Step=   27, Dmax= 8.3e-02 nm, Epot=  1.06921e+07 Fmax= 2.03671e+07, atom= 6998
+Step=   28, Dmax= 9.9e-02 nm, Epot=  1.05170e+07 Fmax= 1.51738e+06, atom= 6998
+Step=   29, Dmax= 1.2e-01 nm, Epot=  1.03588e+07 Fmax= 2.44161e+07, atom= 6996
+Step=   31, Dmax= 7.2e-02 nm, Epot=  1.00637e+07 Fmax= 6.98331e+06, atom= 6998
+
+step 32: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   33, Dmax= 4.3e-02 nm, Epot=  9.87285e+06 Fmax= 1.35616e+06, atom= 6996
+Step=   34, Dmax= 5.2e-02 nm, Epot=  9.58543e+06 Fmax= 1.40118e+06, atom= 6998
+Step=   35, Dmax= 6.2e-02 nm, Epot=  9.26921e+06 Fmax= 1.35007e+06, atom= 6998
+Step=   36, Dmax= 7.4e-02 nm, Epot=  8.92449e+06 Fmax= 1.62909e+06, atom= 6725
+Step=   38, Dmax= 4.5e-02 nm, Epot=  8.77327e+06 Fmax= 2.24126e+06, atom= 6725
+Step=   39, Dmax= 5.3e-02 nm, Epot=  8.64736e+06 Fmax= 1.18829e+06, atom= 6998
+Step=   40, Dmax= 6.4e-02 nm, Epot=  8.36197e+06 Fmax= 1.12805e+06, atom= 6998
+Step=   41, Dmax= 7.7e-02 nm, Epot=  7.99576e+06 Fmax= 1.05859e+06, atom= 6998
+Step=   42, Dmax= 9.2e-02 nm, Epot=  7.54551e+06 Fmax= 9.66576e+05, atom= 6996
+Step=   44, Dmax= 5.5e-02 nm, Epot=  7.28761e+06 Fmax= 1.27885e+06, atom= 144997
+
+step 45: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   46, Dmax= 3.3e-02 nm, Epot=  7.18412e+06 Fmax= 8.65251e+05, atom= 6998
+Step=   47, Dmax= 4.0e-02 nm, Epot=  6.99571e+06 Fmax= 8.10911e+05, atom= 6996
+Step=   48, Dmax= 4.8e-02 nm, Epot=  6.78124e+06 Fmax= 8.32913e+05, atom= 6998
+Step=   49, Dmax= 5.7e-02 nm, Epot=  6.54548e+06 Fmax= 1.32760e+06, atom= 6998
+
+step 50: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   51, Dmax= 3.4e-02 nm, Epot=  6.44964e+06 Fmax= 8.81335e+05, atom= 6998
+Step=   52, Dmax= 4.1e-02 nm, Epot=  6.28226e+06 Fmax= 7.59364e+05, atom= 6998
+Step=   53, Dmax= 5.0e-02 nm, Epot=  6.06218e+06 Fmax= 6.89262e+05, atom= 6998
+Step=   54, Dmax= 6.0e-02 nm, Epot=  5.79241e+06 Fmax= 5.88572e+05, atom= 6996
+Step=   55, Dmax= 7.1e-02 nm, Epot=  5.44741e+06 Fmax= 6.28750e+05, atom= 6998
+Step=   56, Dmax= 8.6e-02 nm, Epot=  5.10399e+06 Fmax= 8.20618e+05, atom= 6996
+
+step 57: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   58, Dmax= 5.1e-02 nm, Epot=  4.97181e+06 Fmax= 5.51309e+05, atom= 6998
+Step=   59, Dmax= 6.2e-02 nm, Epot=  4.71925e+06 Fmax= 6.04562e+05, atom= 6997
+Step=   60, Dmax= 7.4e-02 nm, Epot=  4.47740e+06 Fmax= 5.52460e+05, atom= 6997
+Step=   61, Dmax= 8.9e-02 nm, Epot=  4.16275e+06 Fmax= 5.33707e+05, atom= 6997
+Step=   63, Dmax= 5.3e-02 nm, Epot=  4.01143e+06 Fmax= 4.29788e+06, atom= 7037
+Step=   64, Dmax= 6.4e-02 nm, Epot=  3.98557e+06 Fmax= 5.03224e+05, atom= 6997
+Step=   65, Dmax= 7.7e-02 nm, Epot=  3.74386e+06 Fmax= 5.59586e+05, atom= 6997
+Step=   66, Dmax= 9.2e-02 nm, Epot=  3.60102e+06 Fmax= 1.44505e+07, atom= 7037
+Step=   67, Dmax= 1.1e-01 nm, Epot=  3.53076e+06 Fmax= 4.79810e+05, atom= 6997
+Step=   68, Dmax= 1.3e-01 nm, Epot=  3.16699e+06 Fmax= 2.70020e+06, atom= 6996
+Step=   69, Dmax= 1.6e-01 nm, Epot=  3.10075e+06 Fmax= 4.45561e+05, atom= 6996
+Step=   70, Dmax= 1.9e-01 nm, Epot=  2.73316e+06 Fmax= 7.48851e+06, atom= 6539
+Step=   72, Dmax= 1.1e-01 nm, Epot=  2.60661e+06 Fmax= 3.42965e+06, atom= 397
+Step=   73, Dmax= 1.4e-01 nm, Epot=  2.51221e+06 Fmax= 4.00037e+05, atom= 6999
+Step=   74, Dmax= 1.7e-01 nm, Epot=  2.06778e+06 Fmax= 4.91074e+05, atom= 6539
+
+step 75: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   76, Dmax= 9.9e-02 nm, Epot=  1.92623e+06 Fmax= 2.72611e+06, atom= 6539
+Step=   77, Dmax= 1.2e-01 nm, Epot=  1.85699e+06 Fmax= 3.57058e+05, atom= 6999
+Step=   78, Dmax= 1.4e-01 nm, Epot=  1.51946e+06 Fmax= 3.33409e+05, atom= 6997
+Step=   79, Dmax= 1.7e-01 nm, Epot=  1.16642e+06 Fmax= 4.21214e+05, atom= 6539
+Step=   81, Dmax= 1.0e-01 nm, Epot=  1.05425e+06 Fmax= 2.69473e+06, atom= 6539
+Step=   82, Dmax= 1.2e-01 nm, Epot=  1.04243e+06 Fmax= 3.97461e+06, atom= 396
+Step=   83, Dmax= 1.5e-01 nm, Epot=  9.81561e+05 Fmax= 2.73129e+05, atom= 6997
+Step=   84, Dmax= 1.8e-01 nm, Epot=  7.24188e+05 Fmax= 6.19870e+06, atom= 7000
+Step=   86, Dmax= 1.1e-01 nm, Epot=  6.77800e+05 Fmax= 1.49641e+06, atom= 7000
+Step=   87, Dmax= 1.3e-01 nm, Epot=  6.58326e+05 Fmax= 4.09739e+06, atom= 7000
+Step=   89, Dmax= 7.7e-02 nm, Epot=  6.05091e+05 Fmax= 2.27361e+05, atom= 6999
+Step=   90, Dmax= 9.2e-02 nm, Epot=  4.41379e+05 Fmax= 2.07652e+05, atom= 6999
+Step=   91, Dmax= 1.1e-01 nm, Epot=  2.74523e+05 Fmax= 1.47270e+06, atom= 6996
+Step=   92, Dmax= 1.3e-01 nm, Epot=  2.25110e+05 Fmax= 4.11663e+05, atom= 6996
+Step=   94, Dmax= 7.9e-02 nm, Epot=  1.74595e+05 Fmax= 9.06495e+05, atom= 6996
+Step=   95, Dmax= 9.5e-02 nm, Epot=  1.24489e+05 Fmax= 1.76724e+05, atom= 6999
+Step=   96, Dmax= 1.1e-01 nm, Epot= -5.62425e+04 Fmax= 2.48538e+05, atom= 6996
+Step=   97, Dmax= 1.4e-01 nm, Epot= -1.76604e+05 Fmax= 1.96708e+05, atom= 6998
+
+step 98: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   99, Dmax= 8.2e-02 nm, Epot= -2.74510e+05 Fmax= 4.04721e+05, atom= 6998
+Step=  100, Dmax= 9.9e-02 nm, Epot= -2.90717e+05 Fmax= 1.81946e+06, atom= 6998
+
+step 101: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=  102, Dmax= 5.9e-02 nm, Epot= -3.21795e+05 Fmax= 1.41872e+05, atom= 6998
+Step=  103, Dmax= 7.1e-02 nm, Epot= -4.15123e+05 Fmax= 4.40167e+05, atom= 6988
+Step=  104, Dmax= 8.5e-02 nm, Epot= -4.44682e+05 Fmax= 2.71582e+05, atom= 6988
+Step=  105, Dmax= 1.0e-01 nm, Epot= -5.15587e+05 Fmax= 9.03193e+04, atom= 6999
+Step=  106, Dmax= 1.2e-01 nm, Epot= -6.82235e+05 Fmax= 1.47820e+06, atom= 6686
+Step=  107, Dmax= 1.5e-01 nm, Epot= -6.98820e+05 Fmax= 2.14344e+05, atom= 6686
+Step=  108, Dmax= 1.8e-01 nm, Epot= -7.73099e+05 Fmax= 2.50565e+06, atom= 6686
+Step=  110, Dmax= 1.1e-01 nm, Epot= -8.14112e+05 Fmax= 1.05007e+05, atom= 6686
+Step=  112, Dmax= 6.4e-02 nm, Epot= -8.90024e+05 Fmax= 1.16954e+05, atom= 6725
+Step=  113, Dmax= 7.7e-02 nm, Epot= -9.50006e+05 Fmax= 1.18999e+05, atom= 6686
+Step=  114, Dmax= 9.2e-02 nm, Epot= -1.01689e+06 Fmax= 7.63727e+05, atom= 6686
+Step=  115, Dmax= 1.1e-01 nm, Epot= -1.03211e+06 Fmax= 5.14432e+05, atom= 6724
+Step=  116, Dmax= 1.3e-01 nm, Epot= -1.06698e+06 Fmax= 8.78079e+04, atom= 6686
+Step=  118, Dmax= 7.9e-02 nm, Epot= -1.12015e+06 Fmax= 2.77636e+06, atom= 6686
+Step=  119, Dmax= 9.5e-02 nm, Epot= -1.14663e+06 Fmax= 2.42263e+05, atom= 6725
+
+step 120: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=  121, Dmax= 5.7e-02 nm, Epot= -1.17154e+06 Fmax= 7.82402e+04, atom= 6686
+Step=  122, Dmax= 6.9e-02 nm, Epot= -1.24264e+06 Fmax= 1.86528e+05, atom= 6686
+Step=  123, Dmax= 8.2e-02 nm, Epot= -1.27290e+06 Fmax= 9.50483e+04, atom= 6686
+Step=  124, Dmax= 9.9e-02 nm, Epot= -1.35000e+06 Fmax= 1.30742e+05, atom= 6725
+Step=  125, Dmax= 1.2e-01 nm, Epot= -1.39875e+06 Fmax= 2.05423e+05, atom= 6717
+Step=  127, Dmax= 7.1e-02 nm, Epot= -1.41694e+06 Fmax= 6.46247e+05, atom= 6717
+Step=  128, Dmax= 8.5e-02 nm, Epot= -1.43454e+06 Fmax= 8.93464e+04, atom= 6686
+Step=  129, Dmax= 1.0e-01 nm, Epot= -1.50722e+06 Fmax= 2.92130e+05, atom= 6682
+Step=  130, Dmax= 1.2e-01 nm, Epot= -1.50982e+06 Fmax= 1.03930e+06, atom= 6682
+
+step 131: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=  132, Dmax= 7.4e-02 nm, Epot= -1.53288e+06 Fmax= 8.61308e+04, atom= 6674
+Step=  133, Dmax= 8.8e-02 nm, Epot= -1.58769e+06 Fmax= 2.69534e+05, atom= 6684
+Step=  134, Dmax= 1.1e-01 nm, Epot= -1.60571e+06 Fmax= 2.24431e+05, atom= 6684
+Step=  135, Dmax= 1.3e-01 nm, Epot= -1.63644e+06 Fmax= 3.04049e+05, atom= 6684
+Step=  136, Dmax= 1.5e-01 nm, Epot= -1.65730e+06 Fmax= 4.48244e+05, atom= 6684
+Step=  137, Dmax= 1.8e-01 nm, Epot= -1.67081e+06 Fmax= 7.62951e+05, atom= 3807
+Step=  138, Dmax= 2.2e-01 nm, Epot= -1.69119e+06 Fmax= 1.15038e+05, atom= 6684
+Step=  140, Dmax= 1.3e-01 nm, Epot= -1.71875e+06 Fmax= 3.79717e+06, atom= 7000
+Step=  141, Dmax= 1.6e-01 nm, Epot= -1.75212e+06 Fmax= 1.51741e+05, atom= 7000
+Step=  142, Dmax= 1.9e-01 nm, Epot= -1.80698e+06 Fmax= 3.22095e+05, atom= 7000
+Step=  143, Dmax= 2.3e-01 nm, Epot= -1.81936e+06 Fmax= 2.71696e+05, atom= 6996
+
+step 144: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=  144, Dmax= 2.7e-01 nm, Epot=          inf Fmax= 3.22095e+05, atom= 7000
+step 145: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=  146, Dmax= 6.8e-02 nm, Epot= -1.85172e+06 Fmax= 1.45806e+05, atom= 7000
+Step=  147, Dmax= 8.2e-02 nm, Epot= -1.88833e+06 Fmax= 8.06608e+04, atom= 7000
+Step=  148, Dmax= 9.9e-02 nm, Epot= -1.94145e+06 Fmax= 5.84904e+04, atom= 6996
+Step=  150, Dmax= 5.9e-02 nm, Epot= -1.95997e+06 Fmax= 1.44071e+06, atom= 6543
+Step=  151, Dmax= 7.1e-02 nm, Epot= -1.97543e+06 Fmax= 7.67674e+04, atom= 6543
+Step=  152, Dmax= 8.5e-02 nm, Epot= -1.98843e+06 Fmax= 2.45472e+06, atom= 6543
+Step=  153, Dmax= 1.0e-01 nm, Epot= -2.01785e+06 Fmax= 1.06881e+05, atom= 6543
+Step=  154, Dmax= 1.2e-01 nm, Epot= -2.02520e+06 Fmax= 1.03229e+06, atom= 6670
+Step=  156, Dmax= 7.4e-02 nm, Epot= -2.05113e+06 Fmax= 9.70501e+04, atom= 6543
+Step=  157, Dmax= 8.8e-02 nm, Epot= -2.09096e+06 Fmax= 9.94998e+04, atom= 6996
+Step=  158, Dmax= 1.1e-01 nm, Epot= -2.09998e+06 Fmax= 1.41408e+06, atom= 6551
+Step=  159, Dmax= 1.3e-01 nm, Epot= -2.10800e+06 Fmax= 7.81726e+05, atom= 6551
+Step=  160, Dmax= 1.5e-01 nm, Epot= -2.12223e+06 Fmax= 5.66474e+05, atom= 751
+Step=  162, Dmax= 9.2e-02 nm, Epot= -2.13912e+06 Fmax= 6.70816e+04, atom= 6996
+Step=  163, Dmax= 1.1e-01 nm, Epot= -2.17932e+06 Fmax= 6.08729e+05, atom= 7000
+Step=  164, Dmax= 1.3e-01 nm, Epot= -2.19579e+06 Fmax= 1.24192e+05, atom= 7000
+Step=  165, Dmax= 1.6e-01 nm, Epot= -2.23440e+06 Fmax= 2.46897e+05, atom= 6543
+Step=  167, Dmax= 9.5e-02 nm, Epot= -2.25086e+06 Fmax= 2.22317e+05, atom= 6543
+Step=  168, Dmax= 1.1e-01 nm, Epot= -2.26863e+06 Fmax= 7.21822e+04, atom= 6543
+Step=  169, Dmax= 1.4e-01 nm, Epot= -2.30453e+06 Fmax= 1.03272e+06, atom= 6543
+Step=  171, Dmax= 8.2e-02 nm, Epot= -2.32170e+06 Fmax= 2.09225e+05, atom= 6543
+Step=  172, Dmax= 9.8e-02 nm, Epot= -2.34113e+06 Fmax= 4.35559e+04, atom= 6543
+Step=  174, Dmax= 5.9e-02 nm, Epot= -2.37785e+06 Fmax= 2.28627e+05, atom= 6551
+Step=  175, Dmax= 7.1e-02 nm, Epot= -2.38494e+06 Fmax= 2.85124e+05, atom= 6551
+Step=  176, Dmax= 8.5e-02 nm, Epot= -2.39649e+06 Fmax= 8.35614e+04, atom= 6551
+Step=  177, Dmax= 1.0e-01 nm, Epot= -2.42760e+06 Fmax= 9.04317e+04, atom= 6551
+Step=  178, Dmax= 1.2e-01 nm, Epot= -2.45635e+06 Fmax= 6.09304e+04, atom= 6551
+Step=  180, Dmax= 7.3e-02 nm, Epot= -2.48830e+06 Fmax= 1.14872e+05, atom= 6988
+Step=  181, Dmax= 8.8e-02 nm, Epot= -2.49750e+06 Fmax= 4.47394e+05, atom= 6801
+Step=  182, Dmax= 1.1e-01 nm, Epot= -2.50633e+06 Fmax= 7.61498e+04, atom= 6801
+Step=  184, Dmax= 6.3e-02 nm, Epot= -2.53609e+06 Fmax= 4.21637e+04, atom= 6537
+Step=  185, Dmax= 7.6e-02 nm, Epot= -2.56090e+06 Fmax= 2.41251e+05, atom= 6539
+Step=  186, Dmax= 9.1e-02 nm, Epot= -2.58372e+06 Fmax= 3.97458e+04, atom= 6539
+Step=  187, Dmax= 1.1e-01 nm, Epot= -2.60888e+06 Fmax= 9.89625e+05, atom= 6682
+Step=  189, Dmax= 6.6e-02 nm, Epot= -2.62518e+06 Fmax= 9.37876e+04, atom= 6996
+Step=  190, Dmax= 7.9e-02 nm, Epot= -2.65689e+06 Fmax= 1.23781e+05, atom= 6540
+Step=  191, Dmax= 9.5e-02 nm, Epot= -2.67219e+06 Fmax= 2.06029e+05, atom= 6540
+Step=  192, Dmax= 1.1e-01 nm, Epot= -2.68611e+06 Fmax= 9.64727e+04, atom= 397
+Step=  193, Dmax= 1.4e-01 nm, Epot= -2.69613e+06 Fmax= 9.10269e+05, atom= 387
+Step=  194, Dmax= 1.6e-01 nm, Epot= -2.71754e+06 Fmax= 5.21260e+04, atom= 6996
+Step=  196, Dmax= 9.8e-02 nm, Epot= -2.73140e+06 Fmax= 5.52268e+05, atom= 6539
+Step=  197, Dmax= 1.2e-01 nm, Epot= -2.74023e+06 Fmax= 2.29006e+05, atom= 1523
+Step=  198, Dmax= 1.4e-01 nm, Epot= -2.76348e+06 Fmax= 1.66109e+05, atom= 6539
+Step=  199, Dmax= 1.7e-01 nm, Epot= -2.76508e+06 Fmax= 4.11509e+05, atom= 6539
+Step=  200, Dmax= 2.0e-01 nm, Epot= -2.78116e+06 Fmax= 9.52387e+05, atom= 6539
+Step=  202, Dmax= 1.2e-01 nm, Epot= -2.79311e+06 Fmax= 6.08746e+04, atom= 6539
+Step=  204, Dmax= 7.3e-02 nm, Epot= -2.82135e+06 Fmax= 2.08104e+05, atom= 6537
+Step=  205, Dmax= 8.8e-02 nm, Epot= -2.82648e+06 Fmax= 6.23144e+04, atom= 6537
+Step=  206, Dmax= 1.1e-01 nm, Epot= -2.83250e+06 Fmax= 8.01235e+05, atom= 6543
+Step=  207, Dmax= 1.3e-01 nm, Epot= -2.84520e+06 Fmax= 3.23256e+05, atom= 6542
+Step=  208, Dmax= 1.5e-01 nm, Epot= -2.86178e+06 Fmax= 5.78783e+04, atom= 6543
+Step=  210, Dmax= 9.1e-02 nm, Epot= -2.87731e+06 Fmax= 6.88945e+05, atom= 6539
+Step=  211, Dmax= 1.1e-01 nm, Epot= -2.88922e+06 Fmax= 1.12904e+05, atom= 1523
+Step=  212, Dmax= 1.3e-01 nm, Epot= -2.90816e+06 Fmax= 6.05120e+04, atom= 1523
+Step=  214, Dmax= 7.9e-02 nm, Epot= -2.91733e+06 Fmax= 1.54673e+05, atom= 6996
+Step=  215, Dmax= 9.5e-02 nm, Epot= -2.93354e+06 Fmax= 1.25827e+05, atom= 6991
+Step=  216, Dmax= 1.1e-01 nm, Epot= -2.93545e+06 Fmax= 9.83305e+05, atom= 6991
+Step=  217, Dmax= 1.4e-01 nm, Epot= -2.95952e+06 Fmax= 5.33650e+04, atom= 6986
+Step=  220, Dmax= 4.1e-02 nm, Epot= -2.97185e+06 Fmax= 1.61193e+05, atom= 6991
+Step=  221, Dmax= 4.9e-02 nm, Epot= -2.97679e+06 Fmax= 5.69973e+04, atom= 6986
+Step=  222, Dmax= 5.9e-02 nm, Epot= -2.99346e+06 Fmax= 3.65017e+04, atom= 6537
+Step=  223, Dmax= 7.1e-02 nm, Epot= -3.01033e+06 Fmax= 1.76350e+05, atom= 6513
+Step=  224, Dmax= 8.5e-02 nm, Epot= -3.01484e+06 Fmax= 1.15991e+05, atom= 3255
+Step=  225, Dmax= 1.0e-01 nm, Epot= -3.03250e+06 Fmax= 9.02340e+04, atom= 3257
+Step=  226, Dmax= 1.2e-01 nm, Epot= -3.05295e+06 Fmax= 5.06177e+04, atom= 3245
+
+step 227: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=  228, Dmax= 7.3e-02 nm, Epot= -3.06836e+06 Fmax= 1.54381e+05, atom= 6513
+Step=  229, Dmax= 8.8e-02 nm, Epot= -3.07951e+06 Fmax= 6.84716e+04, atom= 6513
+Step=  230, Dmax= 1.1e-01 nm, Epot= -3.08886e+06 Fmax= 1.41100e+05, atom= 6682
+Step=  232, Dmax= 6.3e-02 nm, Epot= -3.10029e+06 Fmax= 6.73496e+04, atom= 6996
+Step=  233, Dmax= 7.6e-02 nm, Epot= -3.11290e+06 Fmax= 2.56550e+05, atom= 6537
+Step=  234, Dmax= 9.1e-02 nm, Epot= -3.11837e+06 Fmax= 6.97759e+04, atom= 6515
+Step=  235, Dmax= 1.1e-01 nm, Epot= -3.12473e+06 Fmax= 2.00571e+05, atom= 6539
+Step=  236, Dmax= 1.3e-01 nm, Epot= -3.13100e+06 Fmax= 1.37081e+05, atom= 6539
+
+step 237: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=  238, Dmax= 7.9e-02 nm, Epot= -3.15868e+06 Fmax= 4.10105e+04, atom= 6539
+Step=  239, Dmax= 9.4e-02 nm, Epot= -3.16986e+06 Fmax= 1.94566e+05, atom= 3255
+Step=  241, Dmax= 5.7e-02 nm, Epot= -3.18379e+06 Fmax= 5.07683e+04, atom= 6672
+Step=  242, Dmax= 6.8e-02 nm, Epot= -3.19700e+06 Fmax= 7.29403e+04, atom= 6803
+Step=  243, Dmax= 8.2e-02 nm, Epot= -3.20548e+06 Fmax= 4.19724e+05, atom= 6537
+Step=  244, Dmax= 9.8e-02 nm, Epot= -3.21088e+06 Fmax= 7.25648e+04, atom= 6537
+Step=  246, Dmax= 5.9e-02 nm, Epot= -3.22935e+06 Fmax= 2.75744e+04, atom= 6551
+Step=  247, Dmax= 7.1e-02 nm, Epot= -3.24101e+06 Fmax= 8.65646e+04, atom= 6551
+Step=  248, Dmax= 8.5e-02 nm, Epot= -3.26065e+06 Fmax= 4.34863e+04, atom= 3255
+Step=  250, Dmax= 5.1e-02 nm, Epot= -3.26834e+06 Fmax= 1.99579e+05, atom= 6996
+Step=  251, Dmax= 6.1e-02 nm, Epot= -3.27639e+06 Fmax= 6.28882e+04, atom= 6996
+Step=  252, Dmax= 7.3e-02 nm, Epot= -3.28393e+06 Fmax= 1.64095e+05, atom= 6996
+Step=  253, Dmax= 8.8e-02 nm, Epot= -3.29230e+06 Fmax= 6.73530e+04, atom= 6513
+Step=  254, Dmax= 1.1e-01 nm, Epot= -3.29821e+06 Fmax= 1.97707e+05, atom= 6986
+Step=  255, Dmax= 1.3e-01 nm, Epot= -3.30429e+06 Fmax= 1.30734e+05, atom= 6813
+Step=  257, Dmax= 7.6e-02 nm, Epot= -3.31637e+06 Fmax= 6.60566e+04, atom= 6811
+Step=  258, Dmax= 9.1e-02 nm, Epot= -3.33112e+06 Fmax= 7.28702e+04, atom= 6811
+Step=  259, Dmax= 1.1e-01 nm, Epot= -3.33180e+06 Fmax= 1.14772e+05, atom= 7047
+Step=  261, Dmax= 6.5e-02 nm, Epot= -3.35150e+06 Fmax= 6.49872e+04, atom= 7031
+Step=  262, Dmax= 7.9e-02 nm, Epot= -3.36629e+06 Fmax= 6.94121e+04, atom= 6703
+Step=  264, Dmax= 4.7e-02 nm, Epot= -3.37175e+06 Fmax= 5.74491e+04, atom= 6703
+Step=  265, Dmax= 5.7e-02 nm, Epot= -3.38002e+06 Fmax= 9.36325e+04, atom= 6703
+Step=  266, Dmax= 6.8e-02 nm, Epot= -3.38754e+06 Fmax= 7.29340e+04, atom= 6703
+Step=  267, Dmax= 8.1e-02 nm, Epot= -3.39374e+06 Fmax= 1.67348e+05, atom= 6703
+Step=  268, Dmax= 9.8e-02 nm, Epot= -3.39756e+06 Fmax= 8.35270e+04, atom= 6703
+Step=  270, Dmax= 5.9e-02 nm, Epot= -3.41091e+06 Fmax= 1.04302e+05, atom= 6515
+Step=  271, Dmax= 7.0e-02 nm, Epot= -3.41453e+06 Fmax= 1.20831e+05, atom= 6515
+Step=  272, Dmax= 8.4e-02 nm, Epot= -3.42383e+06 Fmax= 3.58900e+04, atom= 6515
+Step=  273, Dmax= 1.0e-01 nm, Epot= -3.43451e+06 Fmax= 1.27175e+05, atom= 6986
+Step=  274, Dmax= 1.2e-01 nm, Epot= -3.43918e+06 Fmax= 1.94997e+05, atom= 6986
+Step=  275, Dmax= 1.5e-01 nm, Epot= -3.45640e+06 Fmax= 5.83865e+04, atom= 6986
+Step=  277, Dmax= 8.8e-02 nm, Epot= -3.45829e+06 Fmax= 1.06145e+05, atom= 6672
+Step=  278, Dmax= 1.1e-01 nm, Epot= -3.46517e+06 Fmax= 2.59780e+05, atom= 6672
+Step=  279, Dmax= 1.3e-01 nm, Epot= -3.47803e+06 Fmax= 5.83768e+05, atom= 6670
+Step=  281, Dmax= 7.6e-02 nm, Epot= -3.48009e+06 Fmax= 6.88586e+04, atom= 6670
+Step=  282, Dmax= 9.1e-02 nm, Epot= -3.49308e+06 Fmax= 1.36407e+05, atom= 6670
+Step=  284, Dmax= 5.4e-02 nm, Epot= -3.49780e+06 Fmax= 1.00103e+05, atom= 6513
+Step=  285, Dmax= 6.5e-02 nm, Epot= -3.50183e+06 Fmax= 5.58672e+04, atom= 6513
+Step=  286, Dmax= 7.8e-02 nm, Epot= -3.50678e+06 Fmax= 1.30095e+05, atom= 6513
+Step=  287, Dmax= 9.4e-02 nm, Epot= -3.51412e+06 Fmax= 8.82885e+04, atom= 6503
+Step=  288, Dmax= 1.1e-01 nm, Epot= -3.52143e+06 Fmax= 1.85683e+05, atom= 6996
+Step=  290, Dmax= 6.8e-02 nm, Epot= -3.52598e+06 Fmax= 7.03091e+04, atom= 6996
+Step=  291, Dmax= 8.1e-02 nm, Epot= -3.53185e+06 Fmax= 1.47105e+05, atom= 6996
+Step=  292, Dmax= 9.8e-02 nm, Epot= -3.53869e+06 Fmax= 7.31088e+04, atom= 6998
+Step=  293, Dmax= 1.2e-01 nm, Epot= -3.54844e+06 Fmax= 3.35801e+05, atom= 6682
+Step=  295, Dmax= 7.0e-02 nm, Epot= -3.55318e+06 Fmax= 5.80516e+04, atom= 6672
+Step=  296, Dmax= 8.4e-02 nm, Epot= -3.55416e+06 Fmax= 3.31248e+05, atom= 6672
+Step=  297, Dmax= 1.0e-01 nm, Epot= -3.56250e+06 Fmax= 1.93733e+05, atom= 6672
+Step=  298, Dmax= 1.2e-01 nm, Epot= -3.56688e+06 Fmax= 2.98569e+05, atom= 6672
+Step=  300, Dmax= 7.3e-02 nm, Epot= -3.57391e+06 Fmax= 5.32761e+04, atom= 6677
+Step=  301, Dmax= 8.7e-02 nm, Epot= -3.58029e+06 Fmax= 6.06568e+05, atom= 6537
+Step=  302, Dmax= 1.0e-01 nm, Epot= -3.58085e+06 Fmax= 6.04839e+04, atom= 6537
+Step=  303, Dmax= 1.3e-01 nm, Epot= -3.59177e+06 Fmax= 1.01407e+05, atom= 6996
+Step=  305, Dmax= 7.6e-02 nm, Epot= -3.59754e+06 Fmax= 7.01812e+04, atom= 6996
+Step=  306, Dmax= 9.1e-02 nm, Epot= -3.59754e+06 Fmax= 1.99402e+05, atom= 6801
+Step=  307, Dmax= 1.1e-01 nm, Epot= -3.60748e+06 Fmax= 7.61248e+04, atom= 6803
+Step=  308, Dmax= 1.3e-01 nm, Epot= -3.61138e+06 Fmax= 3.49765e+05, atom= 3255
+Step=  310, Dmax= 7.8e-02 nm, Epot= -3.62067e+06 Fmax= 5.15925e+04, atom= 3255
+Step=  312, Dmax= 4.7e-02 nm, Epot= -3.63140e+06 Fmax= 4.17281e+04, atom= 6803
+Step=  313, Dmax= 5.6e-02 nm, Epot= -3.63501e+06 Fmax= 1.04320e+05, atom= 6513
+Step=  314, Dmax= 6.8e-02 nm, Epot= -3.63880e+06 Fmax= 7.67125e+04, atom= 6551
+Step=  315, Dmax= 8.1e-02 nm, Epot= -3.63959e+06 Fmax= 3.84893e+05, atom= 6513
+Step=  316, Dmax= 9.7e-02 nm, Epot= -3.64281e+06 Fmax= 8.00717e+04, atom= 6513
+Step=  317, Dmax= 1.2e-01 nm, Epot= -3.64579e+06 Fmax= 2.81595e+05, atom= 6986
+Step=  318, Dmax= 1.4e-01 nm, Epot= -3.65100e+06 Fmax= 1.47367e+05, atom= 6993
+Step=  319, Dmax= 1.7e-01 nm, Epot= -3.66416e+06 Fmax= 1.39077e+05, atom= 6984
+Step=  322, Dmax= 5.1e-02 nm, Epot= -3.66914e+06 Fmax= 4.47249e+04, atom= 6993
+Step=  323, Dmax= 6.1e-02 nm, Epot= -3.67354e+06 Fmax= 2.71986e+05, atom= 6984
+Step=  324, Dmax= 7.3e-02 nm, Epot= -3.67882e+06 Fmax= 4.94474e+04, atom= 6984
+Step=  325, Dmax= 8.7e-02 nm, Epot= -3.68491e+06 Fmax= 2.65084e+05, atom= 6513
+Step=  327, Dmax= 5.2e-02 nm, Epot= -3.68928e+06 Fmax= 4.37273e+04, atom= 6513
+Step=  328, Dmax= 6.3e-02 nm, Epot= -3.69513e+06 Fmax= 1.16861e+05, atom= 6513
+Step=  329, Dmax= 7.5e-02 nm, Epot= -3.69984e+06 Fmax= 5.49212e+04, atom= 6513
+Step=  331, Dmax= 4.5e-02 nm, Epot= -3.70830e+06 Fmax= 2.80038e+04, atom= 6996
+Step=  332, Dmax= 5.4e-02 nm, Epot= -3.71084e+06 Fmax= 4.61336e+04, atom= 6984
+Step=  333, Dmax= 6.5e-02 nm, Epot= -3.71316e+06 Fmax= 9.90870e+04, atom= 6553
+Step=  334, Dmax= 7.8e-02 nm, Epot= -3.72183e+06 Fmax= 9.35481e+04, atom= 6553
+Step=  336, Dmax= 4.7e-02 nm, Epot= -3.72979e+06 Fmax= 6.01469e+04, atom= 6553
+Step=  337, Dmax= 5.6e-02 nm, Epot= -3.73686e+06 Fmax= 4.07458e+04, atom= 6553
+Step=  339, Dmax= 3.4e-02 nm, Epot= -3.74135e+06 Fmax= 3.98459e+04, atom= 6811
+Step=  340, Dmax= 4.1e-02 nm, Epot= -3.74525e+06 Fmax= 2.76652e+04, atom= 6811
+Step=  342, Dmax= 2.4e-02 nm, Epot= -3.74973e+06 Fmax= 3.48852e+04, atom= 6515
+Step=  343, Dmax= 2.9e-02 nm, Epot= -3.75425e+06 Fmax= 4.40297e+04, atom= 3255
+Step=  344, Dmax= 3.5e-02 nm, Epot= -3.75792e+06 Fmax= 7.36247e+04, atom= 6811
+Step=  345, Dmax= 4.2e-02 nm, Epot= -3.76163e+06 Fmax= 6.62336e+04, atom= 6803
+Step=  347, Dmax= 2.5e-02 nm, Epot= -3.76418e+06 Fmax= 1.06797e+05, atom= 6801
+Step=  348, Dmax= 3.0e-02 nm, Epot= -3.76533e+06 Fmax= 2.74181e+04, atom= 6803
+Step=  349, Dmax= 3.6e-02 nm, Epot= -3.77215e+06 Fmax= 2.98626e+04, atom= 6811
+Step=  350, Dmax= 4.4e-02 nm, Epot= -3.77562e+06 Fmax= 9.36517e+04, atom= 6513
+Step=  351, Dmax= 5.2e-02 nm, Epot= -3.77914e+06 Fmax= 3.82813e+04, atom= 6513
+Step=  353, Dmax= 3.1e-02 nm, Epot= -3.78612e+06 Fmax= 2.54300e+04, atom= 6553
+Step=  354, Dmax= 3.8e-02 nm, Epot= -3.78800e+06 Fmax= 9.37316e+04, atom= 6553
+Step=  355, Dmax= 4.5e-02 nm, Epot= -3.79382e+06 Fmax= 5.81540e+04, atom= 6551
+Step=  356, Dmax= 5.4e-02 nm, Epot= -3.79555e+06 Fmax= 1.60432e+05, atom= 6553
+Step=  357, Dmax= 6.5e-02 nm, Epot= -3.80055e+06 Fmax= 3.79236e+04, atom= 6553
+Step=  359, Dmax= 3.9e-02 nm, Epot= -3.80526e+06 Fmax= 3.84035e+04, atom= 6996
+Step=  361, Dmax= 2.3e-02 nm, Epot= -3.80796e+06 Fmax= 3.05534e+04, atom= 6513
+Step=  362, Dmax= 2.8e-02 nm, Epot= -3.81220e+06 Fmax= 3.01883e+04, atom= 6551
+Step=  363, Dmax= 3.4e-02 nm, Epot= -3.81320e+06 Fmax= 9.98379e+04, atom= 6996
+Step=  364, Dmax= 4.0e-02 nm, Epot= -3.81836e+06 Fmax= 3.55399e+04, atom= 6996
+Step=  365, Dmax= 4.9e-02 nm, Epot= -3.82090e+06 Fmax= 1.87281e+05, atom= 6996
+Step=  366, Dmax= 5.8e-02 nm, Epot= -3.82509e+06 Fmax= 4.07827e+04, atom= 6996
+Step=  367, Dmax= 7.0e-02 nm, Epot= -3.82767e+06 Fmax= 2.31463e+05, atom= 3255
+Step=  368, Dmax= 8.4e-02 nm, Epot= -3.83189e+06 Fmax= 4.10449e+04, atom= 3255
+Step=  370, Dmax= 5.0e-02 nm, Epot= -3.83842e+06 Fmax= 1.60011e+05, atom= 6984
+Step=  371, Dmax= 6.0e-02 nm, Epot= -3.84125e+06 Fmax= 5.34302e+04, atom= 6984
+Step=  373, Dmax= 3.6e-02 nm, Epot= -3.84711e+06 Fmax= 1.52358e+04, atom= 6551
+Step=  374, Dmax= 4.4e-02 nm, Epot= -3.85019e+06 Fmax= 7.97785e+04, atom= 6801
+Step=  375, Dmax= 5.2e-02 nm, Epot= -3.85734e+06 Fmax= 4.38278e+04, atom= 6801
+Step=  377, Dmax= 3.1e-02 nm, Epot= -3.86459e+06 Fmax= 3.38541e+04, atom= 3255
+Step=  378, Dmax= 3.8e-02 nm, Epot= -3.86574e+06 Fmax= 4.51828e+05, atom= 6551
+Step=  379, Dmax= 4.5e-02 nm, Epot= -3.86867e+06 Fmax= 2.94602e+04, atom= 6553
+Step=  381, Dmax= 2.7e-02 nm, Epot= -3.87325e+06 Fmax= 3.76696e+04, atom= 6996
+Step=  382, Dmax= 3.2e-02 nm, Epot= -3.87418e+06 Fmax= 2.89273e+05, atom= 6803
+Step=  384, Dmax= 1.9e-02 nm, Epot= -3.87494e+06 Fmax= 4.84859e+04, atom= 6801
+Step=  385, Dmax= 2.3e-02 nm, Epot= -3.87957e+06 Fmax= 3.61599e+04, atom= 6803
+Step=  386, Dmax= 2.8e-02 nm, Epot= -3.88168e+06 Fmax= 9.68176e+04, atom= 6801
+Step=  387, Dmax= 3.4e-02 nm, Epot= -3.88451e+06 Fmax= 2.83862e+04, atom= 6801
+Step=  388, Dmax= 4.0e-02 nm, Epot= -3.88739e+06 Fmax= 2.36650e+06, atom= 6801
+Step=  389, Dmax= 4.8e-02 nm, Epot= -3.88809e+06 Fmax= 7.53698e+04, atom= 6551
+Step=  391, Dmax= 2.9e-02 nm, Epot= -3.89105e+06 Fmax= 3.13292e+04, atom= 6553
+Step=  393, Dmax= 1.7e-02 nm, Epot= -3.89423e+06 Fmax= 2.97525e+04, atom= 6513
+Step=  394, Dmax= 2.1e-02 nm, Epot= -3.89682e+06 Fmax= 2.37918e+04, atom= 6811
+Step=  395, Dmax= 2.5e-02 nm, Epot= -3.89926e+06 Fmax= 3.98580e+04, atom= 6537
+Step=  396, Dmax= 3.0e-02 nm, Epot= -3.90177e+06 Fmax= 6.69190e+04, atom= 6811
+Step=  397, Dmax= 3.6e-02 nm, Epot= -3.90545e+06 Fmax= 3.01373e+04, atom= 6811
+Step=  398, Dmax= 4.3e-02 nm, Epot= -3.90655e+06 Fmax= 1.05574e+05, atom= 6811
+Step=  399, Dmax= 5.2e-02 nm, Epot= -3.91161e+06 Fmax= 2.72991e+04, atom= 6811
+Step=  401, Dmax= 3.1e-02 nm, Epot= -3.91452e+06 Fmax= 9.47295e+04, atom= 6551
+Step=  402, Dmax= 3.8e-02 nm, Epot= -3.91714e+06 Fmax= 1.02472e+05, atom= 6801
+Step=  403, Dmax= 4.5e-02 nm, Epot= -3.92027e+06 Fmax= 4.19423e+04, atom= 6801
+Step=  404, Dmax= 5.4e-02 nm, Epot= -3.92331e+06 Fmax= 1.32075e+05, atom= 6801
+Step=  405, Dmax= 6.5e-02 nm, Epot= -3.92610e+06 Fmax= 4.63107e+04, atom= 6801
+Step=  407, Dmax= 3.9e-02 nm, Epot= -3.93068e+06 Fmax= 2.58133e+04, atom= 6551
+Step=  409, Dmax= 2.3e-02 nm, Epot= -3.93281e+06 Fmax= 3.54054e+04, atom= 6811
+Step=  410, Dmax= 2.8e-02 nm, Epot= -3.93559e+06 Fmax= 6.87286e+04, atom= 6813
+Step=  411, Dmax= 3.4e-02 nm, Epot= -3.93913e+06 Fmax= 1.87912e+04, atom= 6813
+Step=  412, Dmax= 4.0e-02 nm, Epot= -3.93989e+06 Fmax= 1.29256e+05, atom= 6682
+Step=  413, Dmax= 4.8e-02 nm, Epot= -3.94357e+06 Fmax= 1.39487e+05, atom= 6803
+Step=  414, Dmax= 5.8e-02 nm, Epot= -3.94451e+06 Fmax= 6.54142e+04, atom= 6801
+Step=  415, Dmax= 7.0e-02 nm, Epot= -3.94962e+06 Fmax= 4.77467e+04, atom= 6801
+Step=  417, Dmax= 4.2e-02 nm, Epot= -3.95428e+06 Fmax= 3.52992e+04, atom= 6803
+Step=  419, Dmax= 2.5e-02 nm, Epot= -3.95843e+06 Fmax= 4.43908e+04, atom= 6803
+Step=  420, Dmax= 3.0e-02 nm, Epot= -3.96177e+06 Fmax= 3.01082e+04, atom= 6801
+Step=  421, Dmax= 3.6e-02 nm, Epot= -3.96345e+06 Fmax= 5.50570e+04, atom= 6801
+Step=  422, Dmax= 4.3e-02 nm, Epot= -3.96546e+06 Fmax= 3.54466e+04, atom= 6801
+Step=  424, Dmax= 2.6e-02 nm, Epot= -3.97103e+06 Fmax= 3.46836e+04, atom= 6551
+Step=  425, Dmax= 3.1e-02 nm, Epot= -3.97331e+06 Fmax= 3.16252e+05, atom= 6811
+Step=  426, Dmax= 3.7e-02 nm, Epot= -3.97416e+06 Fmax= 2.67640e+04, atom= 6551
+Step=  427, Dmax= 4.5e-02 nm, Epot= -3.97621e+06 Fmax= 6.20539e+04, atom= 6813
+Step=  429, Dmax= 2.7e-02 nm, Epot= -3.98091e+06 Fmax= 1.01573e+05, atom= 6811
+Step=  430, Dmax= 3.2e-02 nm, Epot= -3.98306e+06 Fmax= 3.84685e+04, atom= 6811
+Step=  432, Dmax= 1.9e-02 nm, Epot= -3.98536e+06 Fmax= 2.29569e+04, atom= 6984
+Step=  433, Dmax= 2.3e-02 nm, Epot= -3.98781e+06 Fmax= 3.36998e+04, atom= 6996
+Step=  434, Dmax= 2.8e-02 nm, Epot= -3.98999e+06 Fmax= 2.94428e+04, atom= 6537
+Step=  435, Dmax= 3.4e-02 nm, Epot= -3.99121e+06 Fmax= 7.10354e+04, atom= 6996
+Step=  436, Dmax= 4.0e-02 nm, Epot= -3.99377e+06 Fmax= 7.27244e+04, atom= 6801
+Step=  437, Dmax= 4.8e-02 nm, Epot= -3.99785e+06 Fmax= 4.27763e+04, atom= 6801
+Step=  438, Dmax= 5.8e-02 nm, Epot= -3.99973e+06 Fmax= 1.32099e+05, atom= 6801
+Step=  439, Dmax= 7.0e-02 nm, Epot= -4.00284e+06 Fmax= 4.62162e+04, atom= 6801
+Step=  441, Dmax= 4.2e-02 nm, Epot= -4.00711e+06 Fmax= 2.49881e+04, atom= 6811
+Step=  443, Dmax= 2.5e-02 nm, Epot= -4.00921e+06 Fmax= 3.85559e+04, atom= 6570
+Step=  444, Dmax= 3.0e-02 nm, Epot= -4.01227e+06 Fmax= 3.34114e+04, atom= 6813
+Step=  446, Dmax= 1.8e-02 nm, Epot= -4.01523e+06 Fmax= 2.96844e+04, atom= 6811
+Step=  447, Dmax= 2.2e-02 nm, Epot= -4.01744e+06 Fmax= 2.31950e+04, atom= 6811
+Step=  448, Dmax= 2.6e-02 nm, Epot= -4.01965e+06 Fmax= 5.16605e+04, atom= 6811
+Step=  449, Dmax= 3.1e-02 nm, Epot= -4.02140e+06 Fmax= 6.35173e+04, atom= 6813
+Step=  450, Dmax= 3.7e-02 nm, Epot= -4.02356e+06 Fmax= 3.00690e+04, atom= 6811
+Step=  451, Dmax= 4.5e-02 nm, Epot= -4.02440e+06 Fmax= 4.83792e+04, atom= 6570
+Step=  453, Dmax= 2.7e-02 nm, Epot= -4.02938e+06 Fmax= 2.76953e+04, atom= 6996
+Step=  454, Dmax= 3.2e-02 nm, Epot= -4.03260e+06 Fmax= 1.42547e+05, atom= 3255
+Step=  455, Dmax= 3.9e-02 nm, Epot= -4.03397e+06 Fmax= 4.28760e+04, atom= 6537
+Step=  456, Dmax= 4.7e-02 nm, Epot= -4.03598e+06 Fmax= 9.38710e+04, atom= 6551
+Step=  457, Dmax= 5.6e-02 nm, Epot= -4.03738e+06 Fmax= 7.76908e+04, atom= 3257
+Step=  458, Dmax= 6.7e-02 nm, Epot= -4.04038e+06 Fmax= 4.36065e+04, atom= 6551
+Step=  460, Dmax= 4.0e-02 nm, Epot= -4.04286e+06 Fmax= 4.77856e+04, atom= 6801
+Step=  461, Dmax= 4.8e-02 nm, Epot= -4.04430e+06 Fmax= 6.16901e+04, atom= 6551
+Step=  462, Dmax= 5.8e-02 nm, Epot= -4.04755e+06 Fmax= 5.07187e+04, atom= 6551
+Step=  464, Dmax= 3.5e-02 nm, Epot= -4.05290e+06 Fmax= 2.09637e+04, atom= 6703
+Step=  466, Dmax= 2.1e-02 nm, Epot= -4.05597e+06 Fmax= 3.31864e+04, atom= 6703
+Step=  467, Dmax= 2.5e-02 nm, Epot= -4.05722e+06 Fmax= 2.32814e+04, atom= 6801
+Step=  468, Dmax= 3.0e-02 nm, Epot= -4.05775e+06 Fmax= 8.49808e+04, atom= 6996
+Step=  469, Dmax= 3.6e-02 nm, Epot= -4.06215e+06 Fmax= 3.20479e+04, atom= 6996
+Step=  471, Dmax= 2.2e-02 nm, Epot= -4.06511e+06 Fmax= 8.61835e+04, atom= 6811
+Step=  472, Dmax= 2.6e-02 nm, Epot= -4.06628e+06 Fmax= 3.04996e+04, atom= 6811
+Step=  474, Dmax= 1.6e-02 nm, Epot= -4.06807e+06 Fmax= 2.33254e+04, atom= 6811
+Step=  475, Dmax= 1.9e-02 nm, Epot= -4.06992e+06 Fmax= 3.54605e+04, atom= 6984
+Step=  476, Dmax= 2.2e-02 nm, Epot= -4.07150e+06 Fmax= 2.31519e+04, atom= 6570
+Step=  477, Dmax= 2.7e-02 nm, Epot= -4.07321e+06 Fmax= 3.41029e+04, atom= 6996
+Step=  478, Dmax= 3.2e-02 nm, Epot= -4.07399e+06 Fmax= 7.39642e+04, atom= 6803
+Step=  480, Dmax= 1.9e-02 nm, Epot= -4.07629e+06 Fmax= 9.12275e+04, atom= 6801
+Step=  481, Dmax= 2.3e-02 nm, Epot= -4.07818e+06 Fmax= 2.06168e+04, atom= 6537
+Step=  482, Dmax= 2.8e-02 nm, Epot= -4.07997e+06 Fmax= 9.61026e+04, atom= 6801
+Step=  483, Dmax= 3.3e-02 nm, Epot= -4.08291e+06 Fmax= 2.17045e+04, atom= 6570
+Step=  485, Dmax= 2.0e-02 nm, Epot= -4.08506e+06 Fmax= 4.53282e+04, atom= 6811
+Step=  486, Dmax= 2.4e-02 nm, Epot= -4.08681e+06 Fmax= 4.93835e+04, atom= 6813
+Step=  487, Dmax= 2.9e-02 nm, Epot= -4.08802e+06 Fmax= 6.32085e+04, atom= 6811
+Step=  488, Dmax= 3.5e-02 nm, Epot= -4.08986e+06 Fmax= 3.61806e+04, atom= 6811
+Step=  490, Dmax= 2.1e-02 nm, Epot= -4.09201e+06 Fmax= 2.01016e+04, atom= 6537
+Step=  492, Dmax= 1.2e-02 nm, Epot= -4.09332e+06 Fmax= 2.59402e+04, atom= 6570
+Step=  493, Dmax= 1.5e-02 nm, Epot= -4.09484e+06 Fmax= 2.00292e+04, atom= 6984
+Step=  494, Dmax= 1.8e-02 nm, Epot= -4.09611e+06 Fmax= 6.82983e+04, atom= 6803
+Step=  495, Dmax= 2.2e-02 nm, Epot= -4.09743e+06 Fmax= 8.73976e+04, atom= 6801
+Step=  496, Dmax= 2.6e-02 nm, Epot= -4.09865e+06 Fmax= 6.88067e+05, atom= 6803
+Step=  498, Dmax= 1.6e-02 nm, Epot= -4.09916e+06 Fmax= 2.09034e+04, atom= 6803
+Step=  499, Dmax= 1.9e-02 nm, Epot= -4.10165e+06 Fmax= 2.71417e+04, atom= 6551
+Step=  500, Dmax= 2.2e-02 nm, Epot= -4.10262e+06 Fmax= 4.90925e+04, atom= 6803
+Step=  501, Dmax= 2.7e-02 nm, Epot= -4.10321e+06 Fmax= 1.05553e+05, atom= 6801
+Step=  502, Dmax= 3.2e-02 nm, Epot= -4.10523e+06 Fmax= 4.62808e+04, atom= 6801
+Step=  504, Dmax= 1.9e-02 nm, Epot= -4.10687e+06 Fmax= 3.92894e+04, atom= 6537
+Step=  505, Dmax= 2.3e-02 nm, Epot= -4.10833e+06 Fmax= 2.13485e+04, atom= 6537
+Step=  506, Dmax= 2.8e-02 nm, Epot= -4.10969e+06 Fmax= 4.29566e+04, atom= 6996
+Step=  507, Dmax= 3.3e-02 nm, Epot= -4.11121e+06 Fmax= 3.45453e+04, atom= 6570
+Step=  508, Dmax= 4.0e-02 nm, Epot= -4.11129e+06 Fmax= 3.12077e+05, atom= 6551
+Step=  509, Dmax= 4.8e-02 nm, Epot= -4.11374e+06 Fmax= 3.34096e+04, atom= 6551
+Step=  511, Dmax= 2.9e-02 nm, Epot= -4.11815e+06 Fmax= 3.47610e+04, atom= 6801
+Step=  513, Dmax= 1.7e-02 nm, Epot= -4.12000e+06 Fmax= 2.65984e+04, atom= 6570
+Step=  514, Dmax= 2.1e-02 nm, Epot= -4.12123e+06 Fmax= 2.73813e+04, atom= 6811
+Step=  515, Dmax= 2.5e-02 nm, Epot= -4.12242e+06 Fmax= 2.97498e+04, atom= 6813
+Step=  516, Dmax= 3.0e-02 nm, Epot= -4.12310e+06 Fmax= 1.23697e+05, atom= 6811
+Step=  517, Dmax= 3.6e-02 nm, Epot= -4.12643e+06 Fmax= 2.55985e+04, atom= 6811
+Step=  519, Dmax= 2.2e-02 nm, Epot= -4.12926e+06 Fmax= 2.24917e+04, atom= 6551
+Step=  520, Dmax= 2.6e-02 nm, Epot= -4.12937e+06 Fmax= 2.77509e+04, atom= 6537
+Step=  521, Dmax= 3.1e-02 nm, Epot= -4.13169e+06 Fmax= 5.24777e+04, atom= 6553
+Step=  522, Dmax= 3.7e-02 nm, Epot= -4.13424e+06 Fmax= 6.08181e+04, atom= 6551
+Step=  523, Dmax= 4.5e-02 nm, Epot= -4.13706e+06 Fmax= 4.29518e+04, atom= 6551
+Step=  525, Dmax= 2.7e-02 nm, Epot= -4.13992e+06 Fmax= 2.05639e+04, atom= 6811
+Step=  527, Dmax= 1.6e-02 nm, Epot= -4.14118e+06 Fmax= 3.10985e+04, atom= 6537
+Step=  528, Dmax= 1.9e-02 nm, Epot= -4.14270e+06 Fmax= 3.00747e+04, atom= 6988
+Step=  529, Dmax= 2.3e-02 nm, Epot= -4.14326e+06 Fmax= 1.38672e+05, atom= 6996
+Step=  530, Dmax= 2.8e-02 nm, Epot= -4.14523e+06 Fmax= 2.36838e+04, atom= 6996
+Step=  532, Dmax= 1.7e-02 nm, Epot= -4.14765e+06 Fmax= 1.93988e+04, atom= 6803
+Step=  534, Dmax= 1.0e-02 nm, Epot= -4.14879e+06 Fmax= 2.17352e+04, atom= 6537
+Step=  535, Dmax= 1.2e-02 nm, Epot= -4.14972e+06 Fmax= 2.79915e+04, atom= 6996
+Step=  536, Dmax= 1.4e-02 nm, Epot= -4.15098e+06 Fmax= 2.10604e+04, atom= 6803
+Step=  537, Dmax= 1.7e-02 nm, Epot= -4.15172e+06 Fmax= 2.92444e+04, atom= 6984
+Step=  538, Dmax= 2.1e-02 nm, Epot= -4.15298e+06 Fmax= 2.41737e+04, atom= 6811
+Step=  539, Dmax= 2.5e-02 nm, Epot= -4.15388e+06 Fmax= 2.18018e+05, atom= 6801
+Step=  540, Dmax= 3.0e-02 nm, Epot= -4.15594e+06 Fmax= 2.73088e+04, atom= 6801
+Step=  542, Dmax= 1.8e-02 nm, Epot= -4.15841e+06 Fmax= 2.12474e+04, atom= 6701
+Step=  543, Dmax= 2.2e-02 nm, Epot= -4.15888e+06 Fmax= 3.99905e+04, atom= 6803
+Step=  544, Dmax= 2.6e-02 nm, Epot= -4.16064e+06 Fmax= 2.75602e+04, atom= 7031
+Step=  545, Dmax= 3.1e-02 nm, Epot= -4.16113e+06 Fmax= 6.77840e+04, atom= 6811
+Step=  546, Dmax= 3.7e-02 nm, Epot= -4.16337e+06 Fmax= 3.57215e+04, atom= 6811
+Step=  547, Dmax= 4.5e-02 nm, Epot= -4.16355e+06 Fmax= 6.19326e+04, atom= 6996
+Step=  549, Dmax= 2.7e-02 nm, Epot= -4.16775e+06 Fmax= 7.83299e+04, atom= 6801
+Step=  550, Dmax= 3.2e-02 nm, Epot= -4.16948e+06 Fmax= 2.41090e+04, atom= 6801
+Step=  551, Dmax= 3.9e-02 nm, Epot= -4.17145e+06 Fmax= 6.69635e+04, atom= 6537
+Step=  552, Dmax= 4.6e-02 nm, Epot= -4.17195e+06 Fmax= 4.26205e+04, atom= 6996
+Step=  554, Dmax= 2.8e-02 nm, Epot= -4.17653e+06 Fmax= 2.31253e+04, atom= 7031
+Step=  556, Dmax= 1.7e-02 nm, Epot= -4.17857e+06 Fmax= 2.80296e+04, atom= 6551
+Step=  557, Dmax= 2.0e-02 nm, Epot= -4.18004e+06 Fmax= 2.56348e+04, atom= 6801
+Step=  558, Dmax= 2.4e-02 nm, Epot= -4.18090e+06 Fmax= 4.94112e+04, atom= 6553
+Step=  559, Dmax= 2.9e-02 nm, Epot= -4.18224e+06 Fmax= 6.43028e+04, atom= 6551
+Step=  560, Dmax= 3.5e-02 nm, Epot= -4.18417e+06 Fmax= 3.34678e+04, atom= 6551
+Step=  561, Dmax= 4.1e-02 nm, Epot= -4.18467e+06 Fmax= 9.79318e+04, atom= 6551
+Step=  562, Dmax= 5.0e-02 nm, Epot= -4.18708e+06 Fmax= 3.72878e+04, atom= 6551
+Step=  564, Dmax= 3.0e-02 nm, Epot= -4.18975e+06 Fmax= 2.16923e+04, atom= 6984
+Step=  566, Dmax= 1.8e-02 nm, Epot= -4.19130e+06 Fmax= 3.03546e+04, atom= 6801
+Step=  567, Dmax= 2.1e-02 nm, Epot= -4.19252e+06 Fmax= 3.87982e+04, atom= 6813
+Step=  568, Dmax= 2.6e-02 nm, Epot= -4.19308e+06 Fmax= 2.90968e+05, atom= 6811
+Step=  569, Dmax= 3.1e-02 nm, Epot= -4.19474e+06 Fmax= 2.89463e+04, atom= 6811
+Step=  571, Dmax= 1.9e-02 nm, Epot= -4.19666e+06 Fmax= 3.17991e+04, atom= 6996
+Step=  572, Dmax= 2.2e-02 nm, Epot= -4.19780e+06 Fmax= 2.23816e+04, atom= 6984
+Step=  574, Dmax= 1.3e-02 nm, Epot= -4.19918e+06 Fmax= 2.83271e+04, atom= 6537
+^C
+guest1@capybara:~/wbx$ gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx pdb2gmx, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+
+Using the Charmm36-jul2022 force field in directory ./charmm36-jul2022.ff
+
+going to rename ./charmm36-jul2022.ff/aminoacids.r2b
+Opening force field file ./charmm36-jul2022.ff/aminoacids.r2b
+
+going to rename ./charmm36-jul2022.ff/carb.r2b
+Opening force field file ./charmm36-jul2022.ff/carb.r2b
+
+going to rename ./charmm36-jul2022.ff/cgenff.r2b
+Opening force field file ./charmm36-jul2022.ff/cgenff.r2b
+
+going to rename ./charmm36-jul2022.ff/ethers.r2b
+Opening force field file ./charmm36-jul2022.ff/ethers.r2b
+
+going to rename ./charmm36-jul2022.ff/lipid.r2b
+Opening force field file ./charmm36-jul2022.ff/lipid.r2b
+
+going to rename ./charmm36-jul2022.ff/metals.r2b
+Opening force field file ./charmm36-jul2022.ff/metals.r2b
+
+going to rename ./charmm36-jul2022.ff/na.r2b
+Opening force field file ./charmm36-jul2022.ff/na.r2b
+
+going to rename ./charmm36-jul2022.ff/silicates.r2b
+Opening force field file ./charmm36-jul2022.ff/silicates.r2b
+
+going to rename ./charmm36-jul2022.ff/solvent.r2b
+Opening force field file ./charmm36-jul2022.ff/solvent.r2b
+Reading SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb...
+Read '', 3608 atoms
+
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+
+There are 1 chains and 0 blocks of water and 449 residues with 3608 atoms
+
+  chain  #res #atoms
+
+  1 'P'   449   3608  
+
+All occupancies are one
+
+All occupancies are one
+Opening force field file ./charmm36-jul2022.ff/atomtypes.atp
+
+Reading residue database... (Charmm36-jul2022)
+Opening force field file ./charmm36-jul2022.ff/aminoacids.rtp
+Opening force field file ./charmm36-jul2022.ff/carb.rtp
+Opening force field file ./charmm36-jul2022.ff/cgenff.rtp
+Opening force field file ./charmm36-jul2022.ff/ethers.rtp
+Opening force field file ./charmm36-jul2022.ff/lipid.rtp
+Opening force field file ./charmm36-jul2022.ff/metals.rtp
+Opening force field file ./charmm36-jul2022.ff/na.rtp
+Opening force field file ./charmm36-jul2022.ff/silicates.rtp
+Opening force field file ./charmm36-jul2022.ff/solvent.rtp
+Opening force field file ./charmm36-jul2022.ff/aminoacids.hdb
+Opening force field file ./charmm36-jul2022.ff/carb.hdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.hdb
+Opening force field file ./charmm36-jul2022.ff/ethers.hdb
+Opening force field file ./charmm36-jul2022.ff/lipid.hdb
+Opening force field file ./charmm36-jul2022.ff/metals.hdb
+Opening force field file ./charmm36-jul2022.ff/na.hdb
+Opening force field file ./charmm36-jul2022.ff/silicates.hdb
+Opening force field file ./charmm36-jul2022.ff/solvent.hdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.n.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.n.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.n.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.n.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.n.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.n.tdb
+Opening force field file ./charmm36-jul2022.ff/na.n.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.n.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.n.tdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.c.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.c.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.c.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.c.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.c.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.c.tdb
+Opening force field file ./charmm36-jul2022.ff/na.c.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.c.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.c.tdb
+
+Processing chain 1 'P' (3608 atoms, 449 residues)
+
+Identified residue ARG4 as a starting terminus.
+
+Identified residue ASP962 as a ending terminus.
+9 out of 9 lines of specbond.dat converted successfully
+Special Atom Distance matrix:
+                   MET82  CYS104  MET171  CYS174  MET202   MET82  CYS104
+                   SD629   SG809  SD1254  SG1280  SD1508  SD2276  SG2456
+  CYS104   SG809   1.557
+  MET171  SD1254   3.702   2.234
+  CYS174  SG1280   2.618   1.300   1.144
+  MET202  SD1508   4.027   2.732   1.249   1.625
+   MET82  SD2276   2.527   2.779   4.701   3.979   4.980
+  CYS104  SG2456   2.641   3.638   5.812   4.894   6.071   1.596
+  MET171  SD2897   4.425   5.656   7.877   6.918   8.215   3.725   2.239
+  CYS174  SG2923   3.787   4.829   7.007   6.115   7.358   2.661   1.342
+  MET202  SD3151   5.299   6.405   8.581   7.673   8.842   4.082   2.785
+                  MET171  CYS174
+                  SD2897  SG2923
+  CYS174  SG2923   1.125
+  MET202  SD3151   1.243   1.643
+Start terminus ARG-4: NH3+
+End terminus ASP-962: COO-
+Opening force field file ./charmm36-jul2022.ff/aminoacids.arn
+
+Checking for duplicate atoms....
+
+Now there are 3601 atoms. Deleted 5 duplicates.
+
+Generating any missing hydrogen atoms and/or adding termini.
+
+Now there are 449 residues with 7110 atoms
+
+Making bonds...
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Number of bonds was 7196, now 7196
+
+Generating angles, dihedrals and pairs...
+Before cleaning: 18842 pairs
+Before cleaning: 19057 dihedrals
+
+Making cmap torsions...
+
+There are  447 cmap torsion pairs
+
+There are 19057 dihedrals, 1274 impropers, 12981 angles
+          18710 pairs,     7196 bonds and     0 virtual sites
+
+Total mass 51100.484 a.m.u.
+
+Total charge -11.000 e
+
+Writing topology
+
+Writing coordinate file...
+
+		--------- PLEASE NOTE ------------
+
+You have successfully generated a topology from: SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb.
+
+The Charmm36-jul2022 force field and the spce water model are used.
+
+		--------- ETON ESAELP ------------
+
+GROMACS reminds you: "Big Data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it..." (Dan Ariely)
+
+guest1@capybara:~/wbx$ gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 4.0 -bt cubic
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx editconf, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 4.0 -bt cubic
+
+Note that major changes are planned in future for editconf, to improve usability and utility.
+Read 7110 atoms
+Volume: 546.393 nm^3, corresponds to roughly 245800 electrons
+No velocities found
+    system size :  6.172  8.590 10.307 (nm)
+    diameter    : 11.358               (nm)
+    center      : -1.843  0.190  9.028 (nm)
+    box vectors :  6.172  8.589 10.307 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  : 546.39               (nm^3)
+    shift       : 11.522  9.489  0.651 (nm)
+new center      :  9.679  9.679  9.679 (nm)
+new box vectors : 19.358 19.358 19.358 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  :7254.09               (nm^3)
+
+GROMACS reminds you: "It Costs Too Much If It Costs a Lot" (Magnapop)
+
+guest1@capybara:~/wbx$ gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx solvate, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+
+Reading solute configuration
+Reading solvent configuration
+
+Initialising inter-atomic distances...
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary. Note, that this functionality may
+         be removed in a future GROMACS version. Please, consider
+         using another file format for your input.
+
+NOTE: From version 5.0 gmx solvate uses the Van der Waals radii
+from the source below. This means the results may be different
+compared to previous GROMACS versions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+A. Bondi
+van der Waals Volumes and Radii
+J. Phys. Chem. 68 (1964) pp. 441-451
+-------- -------- --- Thank You --- -------- --------
+
+Generating solvent configuration
+Will generate new solvent configuration of 11x11x11 boxes
+Solvent box contains 764160 atoms in 254720 residues
+Removed 50574 solvent atoms due to solvent-solvent overlap
+Removed 6744 solvent atoms due to solute-solvent overlap
+Sorting configuration
+Found 1 molecule type:
+    SOL (   3 atoms): 235614 residues
+Generated solvent containing 706842 atoms in 235614 residues
+Writing generated configuration to SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro
+
+Output configuration contains 713952 atoms in 236063 residues
+Volume                 :     7254.09 (nm^3)
+Density                :     984.159 (g/l)
+Number of solvent molecules:  235614   
+
+Processing topology
+Adding line for 235614 solvent molecules with resname (SOL) to topology file (topol.top)
+
+Back Off! I just backed up topol.top to ./#topol.top.1#
+
+GROMACS reminds you: "Dr Pauling, how do you have so many good ideas? Well David, I have a lot of ideas and throw away the bad ones." (Linus Pauling)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file ions.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -805522535
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 2 [file topol.top, line 67297]:
+  System has non-zero total charge: -11.000000
+  Total charge should normally be an integer. See
+  https://manual.gromacs.org/current/user-guide/floating-point.html
+  for discussion on how close it should be to an integer.
+
+
+
+Analysing residue names:
+There are:   449    Protein residues
+There are: 235614      Water residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 1435011.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 3 [file ions.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+This run will generate roughly 55 Mb of data
+
+There were 3 NOTEs
+
+GROMACS reminds you: "Right Now My Job is Eating These Doughnuts" (Bodycount)
+
+guest1@capybara:~/wbx$ ^C
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file ions.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -51448323
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+^C
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -310411441
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 1 [file topol.top, line 67297]:
+  System has non-zero total charge: -11.000000
+  Total charge should normally be an integer. See
+  https://manual.gromacs.org/current/user-guide/floating-point.html
+  for discussion on how close it should be to an integer.
+
+
+
+
+WARNING 1 [file topol.top, line 67297]:
+  You are using Ewald electrostatics in a system with net charge. This can
+  lead to severe artifacts, such as ions moving into regions with low
+  dielectric, due to the uniform background charge. We suggest to
+  neutralize your system with counter ions, possibly in combination with a
+  physiological salt concentration.
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+J. S. Hub, B. L. de Groot, H. Grubmueller, G. Groenhof
+Quantifying Artifacts in Ewald Simulations of Inhomogeneous Systems with a Net
+Charge
+J. Chem. Theory Comput. 10 (2014) pp. 381-393
+-------- -------- --- Thank You --- -------- --------
+
+Analysing residue names:
+There are:   449    Protein residues
+There are: 235614      Water residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 1435011.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 9.835 nm between atom 6988 and 6999
+
+WARNING 2 [file ions.mdp]:
+  The largest distance between excluded atoms is 9.835 nm between atom 6988
+  and 6999, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 168x168x168, spacing 0.115 0.115 0.115
+
+Estimate for the relative computational load of the PME mesh part: 0.32
+
+This run will generate roughly 55 Mb of data
+
+There was 1 NOTE
+
+There were 2 WARNINGs
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+Too many warnings (2).
+If you are sure all warnings are harmless, use the -maxwarn option.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -272416835
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 1 [file topol.top, line 67297]:
+  System has non-zero total charge: -11.000000
+  Total charge should normally be an integer. See
+  https://manual.gromacs.org/current/user-guide/floating-point.html
+  for discussion on how close it should be to an integer.
+
+
+
+Analysing residue names:
+There are:   449    Protein residues
+There are: 235614      Water residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 1435011.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 2 [file ions.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+This run will generate roughly 55 Mb of data
+
+There were 2 NOTEs
+
+GROMACS reminds you: "And after some more talk we agreed that the wisdom of rats had been grossly overrated, being in fact no greater than that of men" (Joseph Conrad)
+
+guest1@capybara:~/wbx$ gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx genion, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Will try to add 11 NA ions and 0 CL ions.
+Select a continuous group of solvent molecules
+Group     0 (         System) has 713952 elements
+Group     1 (        Protein) has  7110 elements
+Group     2 (      Protein-H) has  3603 elements
+Group     3 (        C-alpha) has   449 elements
+Group     4 (       Backbone) has  1347 elements
+Group     5 (      MainChain) has  1795 elements
+Group     6 (   MainChain+Cb) has  2205 elements
+Group     7 (    MainChain+H) has  2227 elements
+Group     8 (      SideChain) has  4883 elements
+Group     9 (    SideChain-H) has  1808 elements
+Group    10 (    Prot-Masses) has  7110 elements
+Group    11 (    non-Protein) has 706842 elements
+Group    12 (          Water) has 706842 elements
+Group    13 (            SOL) has 706842 elements
+Group    14 (      non-Water) has  7110 elements
+Select a group: 13
+Selected 13: 'SOL'
+Number of (3-atomic) solvent molecules: 235614
+
+Processing topology
+Replacing 11 solute molecules in topology file (topol.top)  by 11 NA and 0 CL ions.
+
+Back Off! I just backed up topol.top to ./#topol.top.2#
+Using random seed -8403073.
+Replacing solvent molecule 41642 (atom 132036) with NA
+Replacing solvent molecule 153163 (atom 466599) with NA
+Replacing solvent molecule 131250 (atom 400860) with NA
+Replacing solvent molecule 145416 (atom 443358) with NA
+Replacing solvent molecule 202177 (atom 613641) with NA
+Replacing solvent molecule 170830 (atom 519600) with NA
+Replacing solvent molecule 151183 (atom 460659) with NA
+Replacing solvent molecule 90125 (atom 277485) with NA
+Replacing solvent molecule 149400 (atom 455310) with NA
+Replacing solvent molecule 93487 (atom 287571) with NA
+Replacing solvent molecule 192466 (atom 584508) with NA
+
+
+GROMACS reminds you: "The public have an insatiable curiosity to know everything, except what is worth knowing." (Oscar Wilde)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file minim.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -550578689
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+Excluding 3 bonded neighbours molecule type 'NA'
+Analysing residue names:
+There are:   449    Protein residues
+There are: 235603      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 1434978.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 9.835 nm between atom 6988 and 6999
+
+WARNING 1 [file minim.mdp]:
+  The largest distance between excluded atoms is 9.835 nm between atom 6988
+  and 6999, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 168x168x168, spacing 0.115 0.115 0.115
+
+Estimate for the relative computational load of the PME mesh part: 0.35
+
+This run will generate roughly 55 Mb of data
+
+There was 1 NOTE
+
+There was 1 WARNING
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+Too many warnings (1).
+If you are sure all warnings are harmless, use the -maxwarn option.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx pdb2gmx, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+
+Using the Charmm36-jul2022 force field in directory ./charmm36-jul2022.ff
+
+going to rename ./charmm36-jul2022.ff/aminoacids.r2b
+Opening force field file ./charmm36-jul2022.ff/aminoacids.r2b
+
+going to rename ./charmm36-jul2022.ff/carb.r2b
+Opening force field file ./charmm36-jul2022.ff/carb.r2b
+
+going to rename ./charmm36-jul2022.ff/cgenff.r2b
+Opening force field file ./charmm36-jul2022.ff/cgenff.r2b
+
+going to rename ./charmm36-jul2022.ff/ethers.r2b
+Opening force field file ./charmm36-jul2022.ff/ethers.r2b
+
+going to rename ./charmm36-jul2022.ff/lipid.r2b
+Opening force field file ./charmm36-jul2022.ff/lipid.r2b
+
+going to rename ./charmm36-jul2022.ff/metals.r2b
+Opening force field file ./charmm36-jul2022.ff/metals.r2b
+
+going to rename ./charmm36-jul2022.ff/na.r2b
+Opening force field file ./charmm36-jul2022.ff/na.r2b
+
+going to rename ./charmm36-jul2022.ff/silicates.r2b
+Opening force field file ./charmm36-jul2022.ff/silicates.r2b
+
+going to rename ./charmm36-jul2022.ff/solvent.r2b
+Opening force field file ./charmm36-jul2022.ff/solvent.r2b
+Reading SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb...
+Read '', 3608 atoms
+
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+
+There are 1 chains and 0 blocks of water and 449 residues with 3608 atoms
+
+  chain  #res #atoms
+
+  1 'P'   449   3608  
+
+All occupancies are one
+
+All occupancies are one
+Opening force field file ./charmm36-jul2022.ff/atomtypes.atp
+
+Reading residue database... (Charmm36-jul2022)
+Opening force field file ./charmm36-jul2022.ff/aminoacids.rtp
+Opening force field file ./charmm36-jul2022.ff/carb.rtp
+Opening force field file ./charmm36-jul2022.ff/cgenff.rtp
+Opening force field file ./charmm36-jul2022.ff/ethers.rtp
+Opening force field file ./charmm36-jul2022.ff/lipid.rtp
+Opening force field file ./charmm36-jul2022.ff/metals.rtp
+Opening force field file ./charmm36-jul2022.ff/na.rtp
+Opening force field file ./charmm36-jul2022.ff/silicates.rtp
+Opening force field file ./charmm36-jul2022.ff/solvent.rtp
+Opening force field file ./charmm36-jul2022.ff/aminoacids.hdb
+Opening force field file ./charmm36-jul2022.ff/carb.hdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.hdb
+Opening force field file ./charmm36-jul2022.ff/ethers.hdb
+Opening force field file ./charmm36-jul2022.ff/lipid.hdb
+Opening force field file ./charmm36-jul2022.ff/metals.hdb
+Opening force field file ./charmm36-jul2022.ff/na.hdb
+Opening force field file ./charmm36-jul2022.ff/silicates.hdb
+Opening force field file ./charmm36-jul2022.ff/solvent.hdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.n.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.n.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.n.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.n.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.n.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.n.tdb
+Opening force field file ./charmm36-jul2022.ff/na.n.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.n.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.n.tdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.c.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.c.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.c.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.c.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.c.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.c.tdb
+Opening force field file ./charmm36-jul2022.ff/na.c.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.c.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.c.tdb
+
+Processing chain 1 'P' (3608 atoms, 449 residues)
+
+Identified residue ARG4 as a starting terminus.
+
+Identified residue ASP962 as a ending terminus.
+9 out of 9 lines of specbond.dat converted successfully
+Special Atom Distance matrix:
+                   MET82  CYS104  MET171  CYS174  MET202   MET82  CYS104
+                   SD629   SG809  SD1254  SG1280  SD1508  SD2276  SG2456
+  CYS104   SG809   1.557
+  MET171  SD1254   3.702   2.234
+  CYS174  SG1280   2.618   1.300   1.144
+  MET202  SD1508   4.027   2.732   1.249   1.625
+   MET82  SD2276   2.527   2.779   4.701   3.979   4.980
+  CYS104  SG2456   2.641   3.638   5.812   4.894   6.071   1.596
+  MET171  SD2897   4.425   5.656   7.877   6.918   8.215   3.725   2.239
+  CYS174  SG2923   3.787   4.829   7.007   6.115   7.358   2.661   1.342
+  MET202  SD3151   5.299   6.405   8.581   7.673   8.842   4.082   2.785
+                  MET171  CYS174
+                  SD2897  SG2923
+  CYS174  SG2923   1.125
+  MET202  SD3151   1.243   1.643
+Start terminus ARG-4: NH3+
+End terminus ASP-962: COO-
+Opening force field file ./charmm36-jul2022.ff/aminoacids.arn
+
+Checking for duplicate atoms....
+
+Now there are 3601 atoms. Deleted 5 duplicates.
+
+Generating any missing hydrogen atoms and/or adding termini.
+
+Now there are 449 residues with 7110 atoms
+
+Making bonds...
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Number of bonds was 7196, now 7196
+
+Generating angles, dihedrals and pairs...
+Before cleaning: 18842 pairs
+Before cleaning: 19057 dihedrals
+
+Making cmap torsions...
+
+There are  447 cmap torsion pairs
+
+There are 19057 dihedrals, 1274 impropers, 12981 angles
+          18710 pairs,     7196 bonds and     0 virtual sites
+
+Total mass 51100.484 a.m.u.
+
+Total charge -11.000 e
+
+Writing topology
+
+Writing coordinate file...
+
+		--------- PLEASE NOTE ------------
+
+You have successfully generated a topology from: SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb.
+
+The Charmm36-jul2022 force field and the spce water model are used.
+
+		--------- ETON ESAELP ------------
+
+GROMACS reminds you: "Take what you want, but just what you need for survival" (Joe Jackson)
+
+guest1@capybara:~/wbx$ gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 10.0 -bt cubic
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx editconf, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 10.0 -bt cubic
+
+Note that major changes are planned in future for editconf, to improve usability and utility.
+Read 7110 atoms
+Volume: 546.393 nm^3, corresponds to roughly 245800 electrons
+No velocities found
+    system size :  6.172  8.590 10.307 (nm)
+    diameter    : 11.358               (nm)
+    center      : -1.843  0.190  9.028 (nm)
+    box vectors :  6.172  8.589 10.307 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  : 546.39               (nm^3)
+    shift       : 17.522 15.489  6.651 (nm)
+new center      : 15.679 15.679 15.679 (nm)
+new box vectors : 31.358 31.358 31.358 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  :30835.14               (nm^3)
+
+GROMACS reminds you: "Strength is just an accident arising from the weakness of others" (Joseph Conrad)
+
+guest1@capybara:~/wbx$ gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx solvate, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+
+Reading solute configuration
+Reading solvent configuration
+
+Initialising inter-atomic distances...
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary. Note, that this functionality may
+         be removed in a future GROMACS version. Please, consider
+         using another file format for your input.
+
+NOTE: From version 5.0 gmx solvate uses the Van der Waals radii
+from the source below. This means the results may be different
+compared to previous GROMACS versions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+A. Bondi
+van der Waals Volumes and Radii
+J. Phys. Chem. 68 (1964) pp. 441-451
+-------- -------- --- Thank You --- -------- --------
+
+Generating solvent configuration
+Will generate new solvent configuration of 17x17x17 boxes
+Solvent box contains 3181023 atoms in 1060341 residues
+Removed 149013 solvent atoms due to solvent-solvent overlap
+Removed 6636 solvent atoms due to solute-solvent overlap
+Sorting configuration
+Found 1 molecule type:
+    SOL (   3 atoms): 1008458 residues
+Generated solvent containing 3025374 atoms in 1008458 residues
+Writing generated configuration to SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro
+
+Output configuration contains 3032484 atoms in 1008907 residues
+Volume                 :     30835.1 (nm^3)
+Density                :     981.316 (g/l)
+Number of solvent molecules:  1008458   
+
+Processing topology
+Adding line for 1008458 solvent molecules with resname (SOL) to topology file (topol.top)
+
+Back Off! I just backed up topol.top to ./#topol.top.1#
+
+GROMACS reminds you: "Check Your Input" (D. Van Der Spoel)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -404764684
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 1 [file topol.top, line 67297]:
+  System has non-zero total charge: -11.000000
+  Total charge should normally be an integer. See
+  https://manual.gromacs.org/current/user-guide/floating-point.html
+  for discussion on how close it should be to an integer.
+
+
+
+Analysing residue names:
+There are:   449    Protein residues
+There are: 1008458      Water residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 6072075.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 2 [file ions.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+This run will generate roughly 232 Mb of data
+
+There were 2 NOTEs
+
+GROMACS reminds you: "Louis Pasteur's theory of germs is ridiculous fiction." (Pierre Pachet, Professor of Physiology at Toulouse, 1872)
+
+guest1@capybara:~/wbx$ gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx genion, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Will try to add 11 NA ions and 0 CL ions.
+Select a continuous group of solvent molecules
+Group     0 (         System) has 3032484 elements
+Group     1 (        Protein) has  7110 elements
+Group     2 (      Protein-H) has  3603 elements
+Group     3 (        C-alpha) has   449 elements
+Group     4 (       Backbone) has  1347 elements
+Group     5 (      MainChain) has  1795 elements
+Group     6 (   MainChain+Cb) has  2205 elements
+Group     7 (    MainChain+H) has  2227 elements
+Group     8 (      SideChain) has  4883 elements
+Group     9 (    SideChain-H) has  1808 elements
+Group    10 (    Prot-Masses) has  7110 elements
+Group    11 (    non-Protein) has 3025374 elements
+Group    12 (          Water) has 3025374 elements
+Group    13 (            SOL) has 3025374 elements
+Group    14 (      non-Water) has  7110 elements
+Select a group: 13
+Selected 13: 'SOL'
+Number of (3-atomic) solvent molecules: 1008458
+
+Processing topology
+Replacing 11 solute molecules in topology file (topol.top)  by 11 NA and 0 CL ions.
+
+Back Off! I just backed up topol.top to ./#topol.top.2#
+Using random seed -285270565.
+Replacing solvent molecule 105885 (atom 324765) with NA
+Replacing solvent molecule 437252 (atom 1318866) with NA
+Replacing solvent molecule 309494 (atom 935592) with NA
+Replacing solvent molecule 238565 (atom 722805) with NA
+Replacing solvent molecule 277443 (atom 839439) with NA
+Replacing solvent molecule 869994 (atom 2617092) with NA
+Replacing solvent molecule 334446 (atom 1010448) with NA
+Replacing solvent molecule 522468 (atom 1574514) with NA
+Replacing solvent molecule 48347 (atom 152151) with NA
+Replacing solvent molecule 853042 (atom 2566236) with NA
+Replacing solvent molecule 37047 (atom 118251) with NA
+
+
+GROMACS reminds you: "Live for Liposuction" (Robbie Williams)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to 1274478424
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+Excluding 3 bonded neighbours molecule type 'NA'
+Analysing residue names:
+There are:   449    Protein residues
+There are: 1008447      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 6072042.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 9.835 nm between atom 6988 and 6999
+
+WARNING 1 [file minim.mdp]:
+  The largest distance between excluded atoms is 9.835 nm between atom 6988
+  and 6999, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 280x280x280, spacing 0.112 0.112 0.112
+
+Estimate for the relative computational load of the PME mesh part: 0.34
+
+This run will generate roughly 232 Mb of data
+
+There was 1 WARNING
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+Too many warnings (1).
+If you are sure all warnings are harmless, use the -maxwarn option.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx pdb2gmx, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+
+Using the Charmm36-jul2022 force field in directory ./charmm36-jul2022.ff
+
+going to rename ./charmm36-jul2022.ff/aminoacids.r2b
+Opening force field file ./charmm36-jul2022.ff/aminoacids.r2b
+
+going to rename ./charmm36-jul2022.ff/carb.r2b
+Opening force field file ./charmm36-jul2022.ff/carb.r2b
+
+going to rename ./charmm36-jul2022.ff/cgenff.r2b
+Opening force field file ./charmm36-jul2022.ff/cgenff.r2b
+
+going to rename ./charmm36-jul2022.ff/ethers.r2b
+Opening force field file ./charmm36-jul2022.ff/ethers.r2b
+
+going to rename ./charmm36-jul2022.ff/lipid.r2b
+Opening force field file ./charmm36-jul2022.ff/lipid.r2b
+
+going to rename ./charmm36-jul2022.ff/metals.r2b
+Opening force field file ./charmm36-jul2022.ff/metals.r2b
+
+going to rename ./charmm36-jul2022.ff/na.r2b
+Opening force field file ./charmm36-jul2022.ff/na.r2b
+
+going to rename ./charmm36-jul2022.ff/silicates.r2b
+Opening force field file ./charmm36-jul2022.ff/silicates.r2b
+
+going to rename ./charmm36-jul2022.ff/solvent.r2b
+Opening force field file ./charmm36-jul2022.ff/solvent.r2b
+Reading SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb...
+Read '', 3608 atoms
+
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+
+There are 1 chains and 0 blocks of water and 449 residues with 3608 atoms
+
+  chain  #res #atoms
+
+  1 'P'   449   3608  
+
+All occupancies are one
+
+All occupancies are one
+Opening force field file ./charmm36-jul2022.ff/atomtypes.atp
+
+Reading residue database... (Charmm36-jul2022)
+Opening force field file ./charmm36-jul2022.ff/aminoacids.rtp
+Opening force field file ./charmm36-jul2022.ff/carb.rtp
+Opening force field file ./charmm36-jul2022.ff/cgenff.rtp
+Opening force field file ./charmm36-jul2022.ff/ethers.rtp
+Opening force field file ./charmm36-jul2022.ff/lipid.rtp
+Opening force field file ./charmm36-jul2022.ff/metals.rtp
+Opening force field file ./charmm36-jul2022.ff/na.rtp
+Opening force field file ./charmm36-jul2022.ff/silicates.rtp
+Opening force field file ./charmm36-jul2022.ff/solvent.rtp
+Opening force field file ./charmm36-jul2022.ff/aminoacids.hdb
+Opening force field file ./charmm36-jul2022.ff/carb.hdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.hdb
+Opening force field file ./charmm36-jul2022.ff/ethers.hdb
+Opening force field file ./charmm36-jul2022.ff/lipid.hdb
+Opening force field file ./charmm36-jul2022.ff/metals.hdb
+Opening force field file ./charmm36-jul2022.ff/na.hdb
+Opening force field file ./charmm36-jul2022.ff/silicates.hdb
+Opening force field file ./charmm36-jul2022.ff/solvent.hdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.n.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.n.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.n.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.n.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.n.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.n.tdb
+Opening force field file ./charmm36-jul2022.ff/na.n.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.n.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.n.tdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.c.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.c.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.c.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.c.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.c.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.c.tdb
+Opening force field file ./charmm36-jul2022.ff/na.c.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.c.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.c.tdb
+
+Processing chain 1 'P' (3608 atoms, 449 residues)
+
+Identified residue ARG4 as a starting terminus.
+
+Identified residue ASP962 as a ending terminus.
+9 out of 9 lines of specbond.dat converted successfully
+Special Atom Distance matrix:
+                   MET82  CYS104  MET171  CYS174  MET202   MET82  CYS104
+                   SD629   SG809  SD1254  SG1280  SD1508  SD2276  SG2456
+  CYS104   SG809   1.557
+  MET171  SD1254   3.702   2.234
+  CYS174  SG1280   2.618   1.300   1.144
+  MET202  SD1508   4.027   2.732   1.249   1.625
+   MET82  SD2276   2.527   2.779   4.701   3.979   4.980
+  CYS104  SG2456   2.641   3.638   5.812   4.894   6.071   1.596
+  MET171  SD2897   4.425   5.656   7.877   6.918   8.215   3.725   2.239
+  CYS174  SG2923   3.787   4.829   7.007   6.115   7.358   2.661   1.342
+  MET202  SD3151   5.299   6.405   8.581   7.673   8.842   4.082   2.785
+                  MET171  CYS174
+                  SD2897  SG2923
+  CYS174  SG2923   1.125
+  MET202  SD3151   1.243   1.643
+Start terminus ARG-4: NH3+
+End terminus ASP-962: COO-
+Opening force field file ./charmm36-jul2022.ff/aminoacids.arn
+
+Checking for duplicate atoms....
+
+Now there are 3601 atoms. Deleted 5 duplicates.
+
+Generating any missing hydrogen atoms and/or adding termini.
+
+Now there are 449 residues with 7110 atoms
+
+Making bonds...
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Number of bonds was 7196, now 7196
+
+Generating angles, dihedrals and pairs...
+Before cleaning: 18842 pairs
+Before cleaning: 19057 dihedrals
+
+Making cmap torsions...
+
+There are  447 cmap torsion pairs
+
+There are 19057 dihedrals, 1274 impropers, 12981 angles
+          18710 pairs,     7196 bonds and     0 virtual sites
+
+Total mass 51100.484 a.m.u.
+
+Total charge -11.000 e
+
+Writing topology
+
+Writing coordinate file...
+
+		--------- PLEASE NOTE ------------
+
+You have successfully generated a topology from: SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb.
+
+The Charmm36-jul2022 force field and the spce water model are used.
+
+		--------- ETON ESAELP ------------
+
+GROMACS reminds you: "Science grows like a weed every year." (Kary Mullis)
+
+guest1@capybara:~/wbx$ gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 15.0 -bt cubic
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx editconf, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 15.0 -bt cubic
+
+Note that major changes are planned in future for editconf, to improve usability and utility.
+Read 7110 atoms
+Volume: 546.393 nm^3, corresponds to roughly 245800 electrons
+No velocities found
+    system size :  6.172  8.590 10.307 (nm)
+    diameter    : 11.358               (nm)
+    center      : -1.843  0.190  9.028 (nm)
+    box vectors :  6.172  8.589 10.307 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  : 546.39               (nm^3)
+    shift       : 22.522 20.489 11.651 (nm)
+new center      : 20.679 20.679 20.679 (nm)
+new box vectors : 41.358 41.358 41.358 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  :70742.33               (nm^3)
+
+GROMACS reminds you: "We'll celebrate a woman for anything, as long as it's not her talent." (Colleen McCullough)
+
+guest1@capybara:~/wbx$ gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx solvate, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+
+Reading solute configuration
+Reading solvent configuration
+
+Initialising inter-atomic distances...
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary. Note, that this functionality may
+         be removed in a future GROMACS version. Please, consider
+         using another file format for your input.
+
+NOTE: From version 5.0 gmx solvate uses the Van der Waals radii
+from the source below. This means the results may be different
+compared to previous GROMACS versions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+A. Bondi
+van der Waals Volumes and Radii
+J. Phys. Chem. 68 (1964) pp. 441-451
+-------- -------- --- Thank You --- -------- --------
+
+Generating solvent configuration
+Will generate new solvent configuration of 23x23x23 boxes
+Solvent box contains 7258851 atoms in 2419617 residues
+Removed 295974 solvent atoms due to solvent-solvent overlap
+Removed 6756 solvent atoms due to solute-solvent overlap
+Sorting configuration
+Found 1 molecule type:
+    SOL (   3 atoms): 2318707 residues
+Generated solvent containing 6956121 atoms in 2318707 residues
+Writing generated configuration to SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro
+
+Output configuration contains 6963231 atoms in 2319156 residues
+Volume                 :     70742.3 (nm^3)
+Density                :      981.81 (g/l)
+Number of solvent molecules:  2318707   
+
+Processing topology
+Adding line for 2318707 solvent molecules with resname (SOL) to topology file (topol.top)
+
+Back Off! I just backed up topol.top to ./#topol.top.1#
+
+GROMACS reminds you: "The public have an insatiable curiosity to know everything, except what is worth knowing." (Oscar Wilde)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -1645251460
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 1 [file topol.top, line 67297]:
+  System has non-zero total charge: -11.000000
+  Total charge should normally be an integer. See
+  https://manual.gromacs.org/current/user-guide/floating-point.html
+  for discussion on how close it should be to an integer.
+
+
+
+Analysing residue names:
+There are:   449    Protein residues
+There are: 2318707      Water residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 13933569.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 2 [file ions.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+This run will generate roughly 531 Mb of data
+
+There were 2 NOTEs
+
+GROMACS reminds you: "Wicky-wicky Wa-wild West" (Will Smith)
+
+guest1@capybara:~/wbx$ gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx genion, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Will try to add 11 NA ions and 0 CL ions.
+Select a continuous group of solvent molecules
+Group     0 (         System) has 6963231 elements
+Group     1 (        Protein) has  7110 elements
+Group     2 (      Protein-H) has  3603 elements
+Group     3 (        C-alpha) has   449 elements
+Group     4 (       Backbone) has  1347 elements
+Group     5 (      MainChain) has  1795 elements
+Group     6 (   MainChain+Cb) has  2205 elements
+Group     7 (    MainChain+H) has  2227 elements
+Group     8 (      SideChain) has  4883 elements
+Group     9 (    SideChain-H) has  1808 elements
+Group    10 (    Prot-Masses) has  7110 elements
+Group    11 (    non-Protein) has 6956121 elements
+Group    12 (          Water) has 6956121 elements
+Group    13 (            SOL) has 6956121 elements
+Group    14 (      non-Water) has  7110 elements
+Select a group: 13
+Selected 13: 'SOL'
+Number of (3-atomic) solvent molecules: 2318707
+
+Processing topology
+Replacing 11 solute molecules in topology file (topol.top)  by 11 NA and 0 CL ions.
+
+Back Off! I just backed up topol.top to ./#topol.top.2#
+Using random seed -347116161.
+Replacing solvent molecule 305951 (atom 924963) with NA
+Replacing solvent molecule 1448231 (atom 4351803) with NA
+Replacing solvent molecule 550952 (atom 1659966) with NA
+Replacing solvent molecule 1519400 (atom 4565310) with NA
+Replacing solvent molecule 259418 (atom 785364) with NA
+Replacing solvent molecule 1925024 (atom 5782182) with NA
+Replacing solvent molecule 1638926 (atom 4923888) with NA
+Replacing solvent molecule 202225 (atom 613785) with NA
+Replacing solvent molecule 46830 (atom 147600) with NA
+Replacing solvent molecule 272407 (atom 824331) with NA
+Replacing solvent molecule 703555 (atom 2117775) with NA
+
+
+GROMACS reminds you: "set: No match." (tcsh)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -1091127309
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+Excluding 3 bonded neighbours molecule type 'NA'
+Analysing residue names:
+There are:   449    Protein residues
+There are: 2318696      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 13933536.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 9.835 nm between atom 6988 and 6999
+
+WARNING 1 [file minim.mdp]:
+  The largest distance between excluded atoms is 9.835 nm between atom 6988
+  and 6999, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 384x384x384, spacing 0.108 0.108 0.108
+
+Estimate for the relative computational load of the PME mesh part: 0.36
+
+This run will generate roughly 531 Mb of data
+
+There was 1 WARNING
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+Too many warnings (1).
+If you are sure all warnings are harmless, use the -maxwarn option.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx pdb2gmx, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi pdb2gmx -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -ff charmm36-jul2022 -ignh -water spce
+
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+Force field 'charmm36-jul2022' occurs in 2 places. pdb2gmx is using the one in the current directory. Use interactive selection (not the -ff option) if you would prefer a different one.
+
+Using the Charmm36-jul2022 force field in directory ./charmm36-jul2022.ff
+
+going to rename ./charmm36-jul2022.ff/aminoacids.r2b
+Opening force field file ./charmm36-jul2022.ff/aminoacids.r2b
+
+going to rename ./charmm36-jul2022.ff/carb.r2b
+Opening force field file ./charmm36-jul2022.ff/carb.r2b
+
+going to rename ./charmm36-jul2022.ff/cgenff.r2b
+Opening force field file ./charmm36-jul2022.ff/cgenff.r2b
+
+going to rename ./charmm36-jul2022.ff/ethers.r2b
+Opening force field file ./charmm36-jul2022.ff/ethers.r2b
+
+going to rename ./charmm36-jul2022.ff/lipid.r2b
+Opening force field file ./charmm36-jul2022.ff/lipid.r2b
+
+going to rename ./charmm36-jul2022.ff/metals.r2b
+Opening force field file ./charmm36-jul2022.ff/metals.r2b
+
+going to rename ./charmm36-jul2022.ff/na.r2b
+Opening force field file ./charmm36-jul2022.ff/na.r2b
+
+going to rename ./charmm36-jul2022.ff/silicates.r2b
+Opening force field file ./charmm36-jul2022.ff/silicates.r2b
+
+going to rename ./charmm36-jul2022.ff/solvent.r2b
+Opening force field file ./charmm36-jul2022.ff/solvent.r2b
+Reading SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb...
+Read '', 3608 atoms
+
+Analyzing pdb file
+Splitting chemical chains based on TER records or chain id changing.
+
+There are 1 chains and 0 blocks of water and 449 residues with 3608 atoms
+
+  chain  #res #atoms
+
+  1 'P'   449   3608  
+
+All occupancies are one
+
+All occupancies are one
+Opening force field file ./charmm36-jul2022.ff/atomtypes.atp
+
+Reading residue database... (Charmm36-jul2022)
+Opening force field file ./charmm36-jul2022.ff/aminoacids.rtp
+Opening force field file ./charmm36-jul2022.ff/carb.rtp
+Opening force field file ./charmm36-jul2022.ff/cgenff.rtp
+Opening force field file ./charmm36-jul2022.ff/ethers.rtp
+Opening force field file ./charmm36-jul2022.ff/lipid.rtp
+Opening force field file ./charmm36-jul2022.ff/metals.rtp
+Opening force field file ./charmm36-jul2022.ff/na.rtp
+Opening force field file ./charmm36-jul2022.ff/silicates.rtp
+Opening force field file ./charmm36-jul2022.ff/solvent.rtp
+Opening force field file ./charmm36-jul2022.ff/aminoacids.hdb
+Opening force field file ./charmm36-jul2022.ff/carb.hdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.hdb
+Opening force field file ./charmm36-jul2022.ff/ethers.hdb
+Opening force field file ./charmm36-jul2022.ff/lipid.hdb
+Opening force field file ./charmm36-jul2022.ff/metals.hdb
+Opening force field file ./charmm36-jul2022.ff/na.hdb
+Opening force field file ./charmm36-jul2022.ff/silicates.hdb
+Opening force field file ./charmm36-jul2022.ff/solvent.hdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.n.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.n.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.n.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.n.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.n.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.n.tdb
+Opening force field file ./charmm36-jul2022.ff/na.n.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.n.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.n.tdb
+Opening force field file ./charmm36-jul2022.ff/aminoacids.c.tdb
+Opening force field file ./charmm36-jul2022.ff/carb.c.tdb
+Opening force field file ./charmm36-jul2022.ff/cgenff.c.tdb
+Opening force field file ./charmm36-jul2022.ff/ethers.c.tdb
+Opening force field file ./charmm36-jul2022.ff/lipid.c.tdb
+Opening force field file ./charmm36-jul2022.ff/metals.c.tdb
+Opening force field file ./charmm36-jul2022.ff/na.c.tdb
+Opening force field file ./charmm36-jul2022.ff/silicates.c.tdb
+Opening force field file ./charmm36-jul2022.ff/solvent.c.tdb
+
+Processing chain 1 'P' (3608 atoms, 449 residues)
+
+Identified residue ARG4 as a starting terminus.
+
+Identified residue ASP962 as a ending terminus.
+9 out of 9 lines of specbond.dat converted successfully
+Special Atom Distance matrix:
+                   MET82  CYS104  MET171  CYS174  MET202   MET82  CYS104
+                   SD629   SG809  SD1254  SG1280  SD1508  SD2276  SG2456
+  CYS104   SG809   1.557
+  MET171  SD1254   3.702   2.234
+  CYS174  SG1280   2.618   1.300   1.144
+  MET202  SD1508   4.027   2.732   1.249   1.625
+   MET82  SD2276   2.527   2.779   4.701   3.979   4.980
+  CYS104  SG2456   2.641   3.638   5.812   4.894   6.071   1.596
+  MET171  SD2897   4.425   5.656   7.877   6.918   8.215   3.725   2.239
+  CYS174  SG2923   3.787   4.829   7.007   6.115   7.358   2.661   1.342
+  MET202  SD3151   5.299   6.405   8.581   7.673   8.842   4.082   2.785
+                  MET171  CYS174
+                  SD2897  SG2923
+  CYS174  SG2923   1.125
+  MET202  SD3151   1.243   1.643
+Start terminus ARG-4: NH3+
+End terminus ASP-962: COO-
+Opening force field file ./charmm36-jul2022.ff/aminoacids.arn
+
+Checking for duplicate atoms....
+
+Now there are 3601 atoms. Deleted 5 duplicates.
+
+Generating any missing hydrogen atoms and/or adding termini.
+
+Now there are 449 residues with 7110 atoms
+
+Making bonds...
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2371-2373 = 0.455504 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (2480-2479 = 0.252234 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (3255-3257 = 3.02506 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5629-5631 = 0.436783 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (5738-5737 = 0.256066 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6537-6539 = 6.35404 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6682-6684 = 5.07453 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6801-6803 = 4.18229 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Long Bond (6996-6998 = 9.7192 nm)
+
+Number of bonds was 7196, now 7196
+
+Generating angles, dihedrals and pairs...
+Before cleaning: 18842 pairs
+Before cleaning: 19057 dihedrals
+
+Making cmap torsions...
+
+There are  447 cmap torsion pairs
+
+There are 19057 dihedrals, 1274 impropers, 12981 angles
+          18710 pairs,     7196 bonds and     0 virtual sites
+
+Total mass 51100.484 a.m.u.
+
+Total charge -11.000 e
+
+Writing topology
+
+Writing coordinate file...
+
+		--------- PLEASE NOTE ------------
+
+You have successfully generated a topology from: SHP2_SH2_CagA_EPIYA_D_CHARMM_mod.pdb.
+
+The Charmm36-jul2022 force field and the spce water model are used.
+
+		--------- ETON ESAELP ------------
+
+GROMACS reminds you: "Shit Happens" (Pulp Fiction)
+
+guest1@capybara:~/wbx$ gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 20.0 -bt cubic
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx editconf, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi editconf -f SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_processed.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -c -d 20.0 -bt cubic
+
+Note that major changes are planned in future for editconf, to improve usability and utility.
+Read 7110 atoms
+Volume: 546.393 nm^3, corresponds to roughly 245800 electrons
+No velocities found
+    system size :  6.172  8.590 10.307 (nm)
+    diameter    : 11.358               (nm)
+    center      : -1.843  0.190  9.028 (nm)
+    box vectors :  6.172  8.589 10.307 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  : 546.39               (nm^3)
+    shift       : 27.522 25.489 16.651 (nm)
+new center      : 25.679 25.679 25.679 (nm)
+new box vectors : 51.358 51.358 51.358 (nm)
+new box angles  :  90.00  90.00  90.00 (degrees)
+new box volume  :135464.33               (nm^3)
+
+GROMACS reminds you: "You got one part of that wrong. This is not meth." (Breaking Bad)
+
+guest1@capybara:~/wbx$ gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                     :-) GROMACS - gmx solvate, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi solvate -cp SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_newbox.gro -cs spc216.gro -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top
+
+Reading solute configuration
+Reading solvent configuration
+
+Initialising inter-atomic distances...
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary. Note, that this functionality may
+         be removed in a future GROMACS version. Please, consider
+         using another file format for your input.
+
+NOTE: From version 5.0 gmx solvate uses the Van der Waals radii
+from the source below. This means the results may be different
+compared to previous GROMACS versions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+A. Bondi
+van der Waals Volumes and Radii
+J. Phys. Chem. 68 (1964) pp. 441-451
+-------- -------- --- Thank You --- -------- --------
+
+Generating solvent configuration
+Will generate new solvent configuration of 28x28x28 boxes
+Solvent box contains 13833114 atoms in 4611038 residues
+Removed 480528 solvent atoms due to solvent-solvent overlap
+Removed 6783 solvent atoms due to solute-solvent overlap
+Sorting configuration
+Found 1 molecule type:
+    SOL (   3 atoms): 4448601 residues
+Generated solvent containing 13345803 atoms in 4448601 residues
+Writing generated configuration to SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro
+
+Output configuration contains 13352913 atoms in 4449050 residues
+Volume                 :      135464 (nm^3)
+Density                :     983.077 (g/l)
+Number of solvent molecules:  4448601   
+
+Processing topology
+Adding line for 4448601 solvent molecules with resname (SOL) to topology file (topol.top)
+
+Back Off! I just backed up topol.top to ./#topol.top.1#
+
+GROMACS reminds you: ""What are the biological implications of your research?" - "Well, I simulate water." " (Petter Johansson)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f ions.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv.gro -p topol.top -o ions.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to 1839136766
+gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 1 [file topol.top, line 67297]:
+  System has non-zero total charge: -11.000000
+  Total charge should normally be an integer. See
+  https://manual.gromacs.org/current/user-guide/floating-point.html
+  for discussion on how close it should be to an integer.
+
+
+
+Analysing residue names:
+There are:   449    Protein residues
+There are: 4448601      Water residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 26712932.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+NOTE 2 [file ions.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+
+This run will generate roughly 1019 Mb of data
+
+There were 2 NOTEs
+
+GROMACS reminds you: "This Puke Stinks Like Beer" (LIVE)
+
+guest1@capybara:~/wbx$ gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx genion, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi genion -s ions.tpr -o SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Reading file ions.tpr, VERSION 2024.1 (single precision)
+Will try to add 11 NA ions and 0 CL ions.
+Select a continuous group of solvent molecules
+Group     0 (         System) has 13352913 elements
+Group     1 (        Protein) has  7110 elements
+Group     2 (      Protein-H) has  3603 elements
+Group     3 (        C-alpha) has   449 elements
+Group     4 (       Backbone) has  1347 elements
+Group     5 (      MainChain) has  1795 elements
+Group     6 (   MainChain+Cb) has  2205 elements
+Group     7 (    MainChain+H) has  2227 elements
+Group     8 (      SideChain) has  4883 elements
+Group     9 (    SideChain-H) has  1808 elements
+Group    10 (    Prot-Masses) has  7110 elements
+Group    11 (    non-Protein) has 13345803 elements
+Group    12 (          Water) has 13345803 elements
+Group    13 (            SOL) has 13345803 elements
+Group    14 (      non-Water) has  7110 elements
+Select a group: 13
+Selected 13: 'SOL'
+Number of (3-atomic) solvent molecules: 4448601
+
+Processing topology
+Replacing 11 solute molecules in topology file (topol.top)  by 11 NA and 0 CL ions.
+
+Back Off! I just backed up topol.top to ./#topol.top.2#
+Using random seed 1062730749.
+Replacing solvent molecule 2840617 (atom 8528961) with NA
+Replacing solvent molecule 3286184 (atom 9865662) with NA
+Replacing solvent molecule 3966589 (atom 11906877) with NA
+Replacing solvent molecule 1076662 (atom 3237096) with NA
+Replacing solvent molecule 192986 (atom 586068) with NA
+Replacing solvent molecule 1190603 (atom 3578919) with NA
+Replacing solvent molecule 1727353 (atom 5189169) with NA
+Replacing solvent molecule 2511366 (atom 7541208) with NA
+Replacing solvent molecule 1052697 (atom 3165201) with NA
+Replacing solvent molecule 4030328 (atom 12098094) with NA
+Replacing solvent molecule 1265124 (atom 3802482) with NA
+
+
+GROMACS reminds you: "I Am a Wonderful Thing" (Kid Creole)
+
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -1184849
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+Excluding 3 bonded neighbours molecule type 'NA'
+Analysing residue names:
+There are:   449    Protein residues
+There are: 4448590      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 26712900.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 9.835 nm between atom 6988 and 6999
+
+WARNING 1 [file minim.mdp]:
+  The largest distance between excluded atoms is 9.835 nm between atom 6988
+  and 6999, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 432x432x432, spacing 0.119 0.119 0.119
+
+Estimate for the relative computational load of the PME mesh part: 0.33
+
+This run will generate roughly 1019 Mb of data
+
+There was 1 WARNING
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2024.1
+Source file: src/gromacs/gmxpreprocess/grompp.cpp (line 2751)
+
+Fatal error:
+Too many warnings (1).
+If you are sure all warnings are harmless, use the -maxwarn option.
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at https://manual.gromacs.org/current/user-guide/run-time-errors.html
+-------------------------------------------------------
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+guest1@capybara:~/wbx$ gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx grompp, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi grompp -f minim.mdp -c SHP2_SH2_CagA_EPIYA_D_CHARMM_mod_solv_ions.gro -p topol.top -o em.tpr -maxwarn 1
+
+Ignoring obsolete mdp entry 'ns_type'
+Setting the LD random seed to -285223962
+
+Generated 167799 of the 167910 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 1
+
+Generated 117432 of the 167910 1-4 parameter combinations
+
+Excluding 3 bonded neighbours molecule type 'Protein_chain_P'
+
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+Excluding 3 bonded neighbours molecule type 'NA'
+Analysing residue names:
+There are:   449    Protein residues
+There are: 4448590      Water residues
+There are:    11        Ion residues
+Analysing Protein...
+Number of degrees of freedom in T-Coupling group rest is 26712900.00
+The integrator does not provide a ensemble temperature, there is no system ensemble temperature
+
+The largest distance between excluded atoms is 9.835 nm between atom 6988 and 6999
+
+WARNING 1 [file minim.mdp]:
+  The largest distance between excluded atoms is 9.835 nm between atom 6988
+  and 6999, which is larger than the cut-off distance. This will lead to
+  missing long-range corrections in the forces and energies. If you expect
+  that minimization will bring such distances within the cut-off, you can
+  ignore this warning.
+
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 432x432x432, spacing 0.119 0.119 0.119
+
+Estimate for the relative computational load of the PME mesh part: 0.33
+
+This run will generate roughly 1019 Mb of data
+
+There was 1 WARNING
+
+GROMACS reminds you: "People who do QM/MM must be rather patient and enjoy quality over speed" (Kresten Lindorff-Larsen)
+
+guest1@capybara:~/wbx$ gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+                      :-) GROMACS - gmx mdrun, 2024.1 (-:
+
+Executable:   /usr/local/bin/gmx_mpi
+Data prefix:  /usr/local
+Working dir:  /home/guest1/wbx
+Command line:
+  gmx_mpi mdrun -v -deffnm em -ntomp 16 -nb gpu
+
+Reading file em.tpr, VERSION 2024.1 (single precision)
+1 GPU selected for this run.
+Mapping of GPU IDs to the 1 GPU task in the 1 rank on this node:
+  PP:0
+PP tasks will do (non-perturbed) short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+Using 1 MPI process
+Using 16 OpenMP threads 
+
+
+NOTE: The number of threads is not equal to the number of (logical) cpus
+      and the -pin option is set to auto: will not pin threads to cpus.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+03
+   Number of steps    =        50000
+
+WARNING: Listed nonbonded interaction between particles 6672 and 6684
+at distance 4.944 which is larger than the table limit 2.050 nm.
+
+This is likely either a 1,4 interaction, or a listed interaction inside
+a smaller molecule you are decoupling during a free energy calculation.
+Since interactions at distances beyond the table cannot be computed,
+they are skipped until they are inside the table limit again. You will
+only see this message once, even if it occurs for several interactions.
+
+IMPORTANT: This should not happen in a stable simulation, so there is
+probably something wrong with your system. Only change the table-extension
+distance in the mdp file if you are really sure that is the reason.
+
+
+Step=    0, Dmax= 1.0e-02 nm, Epot= -1.17253e+08 Fmax= 8.78859e+09, atom= 6720
+Step=    1, Dmax= 1.0e-02 nm, Epot= -1.60951e+08 Fmax= 2.32578e+08, atom= 6720
+Step=    2, Dmax= 1.2e-02 nm, Epot= -1.62471e+08 Fmax= 9.70419e+06, atom= 6720
+Step=    3, Dmax= 1.4e-02 nm, Epot= -1.62757e+08 Fmax= 2.97274e+06, atom= 6996
+Step=    4, Dmax= 1.7e-02 nm, Epot= -1.63422e+08 Fmax= 2.95134e+06, atom= 6996
+Step=    5, Dmax= 2.1e-02 nm, Epot= -1.64128e+08 Fmax= 2.92834e+06, atom= 6996
+Step=    6, Dmax= 2.5e-02 nm, Epot= -1.64880e+08 Fmax= 2.90141e+06, atom= 6998
+Step=    7, Dmax= 3.0e-02 nm, Epot= -1.65705e+08 Fmax= 2.86531e+06, atom= 6998
+Step=    8, Dmax= 3.6e-02 nm, Epot= -1.66588e+08 Fmax= 2.78650e+06, atom= 6998
+Step=    9, Dmax= 4.3e-02 nm, Epot= -1.67513e+08 Fmax= 2.15604e+06, atom= 6996
+Step=   10, Dmax= 5.2e-02 nm, Epot= -1.68595e+08 Fmax= 9.43277e+06, atom= 7017
+Step=   11, Dmax= 6.2e-02 nm, Epot= -1.68869e+08 Fmax= 2.81211e+06, atom= 6996
+Step=   12, Dmax= 7.4e-02 nm, Epot= -1.70100e+08 Fmax= 2.72826e+06, atom= 6996
+Step=   13, Dmax= 8.9e-02 nm, Epot= -1.71337e+08 Fmax= 2.68241e+06, atom= 7017
+Step=   14, Dmax= 1.1e-01 nm, Epot= -1.72482e+08 Fmax= 5.18470e+06, atom= 6994795
+
+step 15: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+Step=   15, Dmax= 1.3e-01 nm, Epot=          inf Fmax= 2.68241e+06, atom= 7017
+step 16: One or more water molecules can not be settled.
+Check for bad contacts and/or reduce the timestep if appropriate.
+Wrote pdb files with previous and current coordinates
+^Cep=   16, Dmax= 6.4e-02 nm, Epot=          inf Fmax= 2.68241e+06, atom= 7017
+guest1@capybara:~/wbx$ 
+
