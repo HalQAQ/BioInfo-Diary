@@ -35,7 +35,7 @@ I followed this direction: <https://blog.csdn.net/weixin_52018852/article/detail
     # NVIDIA driver version 535.161.08, CUDA version 11.5
     conda install scvi-tools==0.20.1
     conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia
-    # The versions work for me
+    # These versions work for me
     ```
 
 4. When importing and using scvi, you may enconter some errors. If failed importing scvi, try to use an older version of scvi and also jax and jaxlib. If can't use GPU when training the model, try to install another version of CUDA Toolkit. cuDNN is not required in scvi.
